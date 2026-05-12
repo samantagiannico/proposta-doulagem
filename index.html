@@ -1,0 +1,392 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta de Doulagem — Gestar Parir Amar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Serif+4:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Libre+Franklin:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+@page { size: A4 portrait; margin: 0; }
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+  --terra: #5A372B; --caule: #935A3D; --fruto: #A73E2B; --flor: #97262B;
+  --semente: #E0DFB1; --seiva: #F5F4D7; --cream: #FAF9EE;
+  --font-display: 'Playfair Display', 'Georgia', serif;
+  --font-body: 'Source Serif 4', 'Georgia', serif;
+  --font-sans: 'Libre Franklin', 'Helvetica Neue', sans-serif;
+}
+html, body { background: var(--cream); font-family: var(--font-body); color: var(--terra); -webkit-font-smoothing: antialiased; }
+.page { width: 210mm; height: 297mm; margin: 0 auto; position: relative; overflow: hidden; page-break-after: always; page-break-inside: avoid; }
+.page + .page { margin-top: 2mm; }
+@media print { .page + .page { margin-top: 0; } body { background: white; } }
+.tag { font-family: var(--font-sans); text-transform: uppercase; font-size: 7.5pt; letter-spacing: 3pt; font-weight: 500; }
+.p1 { background: var(--seiva); display: flex; flex-direction: column; align-items: center; padding: 35mm 25mm 0; }
+.p1-top { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; position: relative; z-index: 2; }
+.p1-logo { width: 42mm; margin-bottom: 10mm; }
+.p1-brand { font-family: var(--font-sans); font-weight: 300; font-size: 22pt; color: var(--terra); letter-spacing: 5pt; text-transform: uppercase; margin-bottom: 3mm; }
+.p1-sub { font-family: var(--font-sans); font-weight: 300; font-size: 9pt; color: var(--caule); letter-spacing: 2pt; margin-bottom: 18mm; }
+.p1-tagline { font-family: var(--font-display); font-weight: 500; font-size: 26pt; color: var(--terra); line-height: 1.3; margin-bottom: 4mm; }
+.p1-loc { font-family: var(--font-sans); font-weight: 300; font-size: 9pt; color: var(--caule); letter-spacing: 1.5pt; margin-bottom: 10mm; }
+.p1-photo-strip { width: calc(100% + 50mm); margin: 0 -25mm; height: 85mm; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.4fr; gap: 1.5mm; }
+.p1-photo-strip .strip-img { overflow: hidden; }
+.p1-photo-strip .strip-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.p1-footer { position: absolute; bottom: 0; left: 0; right: 0; height: 8mm; background: var(--terra); display: flex; align-items: center; justify-content: center; }
+.p1-footer span { font-family: var(--font-sans); text-transform: uppercase; font-size: 6.5pt; letter-spacing: 3pt; color: var(--semente); opacity: 0.7; }
+.p1-deco { position: absolute; top: 20mm; right: 18mm; opacity: 0.06; z-index: 0; }
+.p2 { background: var(--cream); display: grid; grid-template-columns: 42% 1fr; gap: 0; }
+.p2-photo { position: relative; overflow: hidden; }
+.p2-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; }
+.p2-photo-accent { position: absolute; bottom: 0; left: 0; right: 0; height: 3mm; background: var(--fruto); }
+.p2-text { padding: 24mm 18mm 20mm 14mm; display: flex; flex-direction: column; }
+.p2-text .tag { color: var(--caule); margin-bottom: 5mm; }
+.p2-text h2 { font-family: var(--font-display); font-weight: 600; font-size: 34pt; color: var(--terra); line-height: 1.1; margin-bottom: 8mm; }
+.p2-body { font-family: var(--font-body); font-size: 10.5pt; line-height: 1.65; color: var(--caule); margin-bottom: 3.5mm; }
+.p2-quote { margin-top: auto; padding-top: 6mm; border-top: 0.5pt solid var(--caule); font-family: var(--font-display); font-style: italic; font-size: 14pt; line-height: 1.45; color: var(--flor); }
+.p2-deco-spiral { position: absolute; bottom: 18mm; right: 16mm; opacity: 0.08; }
+.p3 { background: var(--seiva); padding: 22mm 18mm; display: flex; flex-direction: column; }
+.p3-header { text-align: center; margin-bottom: 4mm; }
+.p3-header .tag { color: var(--caule); display: block; margin-bottom: 4mm; }
+.p3-header h2 { font-family: var(--font-display); font-weight: 600; font-size: 34pt; color: var(--terra); line-height: 1.1; margin-bottom: 3mm; }
+.p3-subtitle { font-family: var(--font-body); font-weight: 300; font-size: 13pt; color: var(--caule); text-align: center; margin-bottom: 10mm; }
+.p3-photo-row { display: grid; grid-template-columns: 1fr 1.6fr 1fr; gap: 2mm; height: 55mm; margin-bottom: 8mm; border-radius: 2mm; overflow: hidden; }
+.p3-photo-row .pr-img { overflow: hidden; }
+.p3-photo-row .pr-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.p3-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5mm; flex: 1; }
+.p3-card { padding: 7mm 7mm; border-radius: 2.5mm; display: flex; flex-direction: column; }
+.p3-card-1 { background: var(--terra); color: var(--semente); }
+.p3-card-2 { background: var(--cream); color: var(--terra); border: 0.3mm solid var(--caule); }
+.p3-card-3 { background: var(--terra); color: var(--semente); }
+.p3-card .num { font-family: var(--font-display); font-weight: 700; font-size: 48pt; line-height: 1; margin-bottom: 3mm; }
+.p3-card-1 .num, .p3-card-3 .num { color: var(--semente); opacity: 0.3; }
+.p3-card-2 .num { color: var(--fruto); opacity: 0.4; }
+.p3-card h3 { font-family: var(--font-sans); font-weight: 600; font-size: 11pt; letter-spacing: 3pt; text-transform: uppercase; margin-bottom: 4mm; }
+.p3-card .divider { width: 14mm; height: 0.4mm; margin-bottom: 4mm; }
+.p3-card-1 .divider, .p3-card-3 .divider { background: var(--semente); opacity: 0.25; }
+.p3-card-2 .divider { background: var(--fruto); opacity: 0.5; }
+.p3-card .text { font-family: var(--font-body); font-size: 9.5pt; line-height: 1.55; }
+.p3-card-1 .text, .p3-card-3 .text { opacity: 0.85; }
+.p3-footer { text-align: center; margin-top: 6mm; }
+.p3-footer-logo { width: 20mm; }
+.p4 { background: var(--cream); padding: 22mm 20mm; display: flex; flex-direction: column; }
+.p4-header { margin-bottom: 10mm; }
+.p4-header .tag { color: var(--caule); margin-bottom: 4mm; display: block; }
+.p4-header h2 { font-family: var(--font-display); font-weight: 600; font-size: 34pt; color: var(--terra); line-height: 1.1; }
+.modalidade { display: grid; grid-template-columns: 22mm 1fr; gap: 5mm; align-items: start; padding: 7mm 0; border-bottom: 0.3pt solid var(--semente); }
+.modalidade:last-of-type { border-bottom: none; }
+.mod-icon { width: 22mm; height: 22mm; }
+.modalidade h3 { font-family: var(--font-display); font-weight: 600; font-size: 18pt; color: var(--terra); margin-bottom: 2mm; }
+.modalidade p { font-family: var(--font-body); font-size: 10pt; line-height: 1.55; color: var(--caule); }
+.p4-footer { margin-top: auto; display: flex; align-items: center; justify-content: space-between; }
+.p4-footer-text { font-family: var(--font-sans); text-transform: uppercase; font-size: 7.5pt; letter-spacing: 2.5pt; color: var(--caule); }
+.p4-footer-logo { width: 16mm; }
+.p4-photo-accent { position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 22mm; height: 120mm; overflow: hidden; border-radius: 2mm 0 0 2mm; }
+.p4-photo-accent img { width: 100%; height: 100%; object-fit: cover; }
+.p5 { background: var(--seiva); padding: 18mm 12mm 12mm; display: flex; flex-direction: column; }
+.p5-header { text-align: center; margin-bottom: 6mm; }
+.p5-header .tag { color: var(--caule); display: block; margin-bottom: 3mm; }
+.p5-header h2 { font-family: var(--font-display); font-weight: 600; font-size: 28pt; color: var(--terra); }
+.p5-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; flex: 1; }
+.pk { padding: 5mm 4.5mm; border-radius: 2mm; display: flex; flex-direction: column; }
+.pk-cream { background: var(--cream); border: 0.3mm solid var(--semente); color: var(--terra); }
+.pk-terra { background: var(--terra); color: var(--semente); }
+.pk-name { font-family: var(--font-display); font-weight: 700; font-size: 15pt; margin-bottom: 0.5mm; }
+.pk-type { font-family: var(--font-sans); font-size: 6.5pt; font-weight: 500; text-transform: uppercase; letter-spacing: 2pt; margin-bottom: 4mm; }
+.pk-cream .pk-type { color: var(--caule); }
+.pk-terra .pk-type { color: var(--semente); opacity: 0.5; }
+.pk ul { list-style: none; font-family: var(--font-body); font-size: 7.5pt; line-height: 1.5; flex: 1; }
+.pk li { padding-left: 3mm; position: relative; margin-bottom: 1.2mm; }
+.pk li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 1mm; height: 1mm; border-radius: 50%; }
+.pk-cream li::before { background: var(--fruto); }
+.pk-terra li::before { background: var(--semente); opacity: 0.4; }
+.pk .pk-line { width: 12mm; height: 0.3mm; margin: 2.5mm 0; }
+.pk-cream .pk-line { background: var(--caule); opacity: 0.3; }
+.pk-terra .pk-line { background: var(--semente); opacity: 0.2; }
+.pk-price { font-family: var(--font-display); font-weight: 700; font-size: 18pt; }
+.pk-cream .pk-price { color: var(--flor); }
+.pk-terra .pk-price { color: var(--semente); }
+.pk-alt { font-family: var(--font-sans); font-size: 7.5pt; font-weight: 300; margin-top: 0.5mm; }
+.pk-cream .pk-alt { color: var(--caule); }
+.pk-terra .pk-alt { color: var(--semente); opacity: 0.6; }
+.p5-footer { text-align: center; margin-top: 4mm; font-family: var(--font-body); font-size: 9pt; color: var(--caule); }
+.p6 { background: var(--cream); display: grid; grid-template-columns: 1fr 32%; gap: 0; }
+.p6-text { padding: 22mm 14mm 18mm 20mm; display: flex; flex-direction: column; }
+.p6-text .tag { color: var(--caule); margin-bottom: 4mm; display: block; }
+.p6-text h2 { font-family: var(--font-display); font-weight: 600; font-size: 30pt; color: var(--terra); line-height: 1.12; margin-bottom: 12mm; }
+.step { position: relative; padding-left: 16mm; padding-bottom: 5.5mm; margin-left: 5mm; }
+.step::before { content: ''; position: absolute; left: 4.5mm; top: 10mm; bottom: 0; width: 0.3mm; background: var(--semente); }
+.step:last-child::before { display: none; }
+.step-num { position: absolute; left: -1mm; top: 0; width: 10mm; font-family: var(--font-display); font-weight: 700; font-size: 24pt; color: var(--caule); opacity: 0.4; text-align: center; }
+.step h3 { font-family: var(--font-display); font-weight: 600; font-size: 13pt; color: var(--terra); margin-bottom: 1mm; }
+.step p { font-family: var(--font-body); font-size: 9pt; line-height: 1.55; color: var(--caule); }
+.p6-photo { position: relative; overflow: hidden; }
+.p6-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+.p6-photo::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2mm; background: var(--fruto); z-index: 1; }
+.p7 { background: var(--terra); padding: 14mm 10mm 10mm; display: flex; flex-direction: column; }
+.p7-header { text-align: center; margin-bottom: 5mm; }
+.p7-header .tag { color: var(--caule); display: block; margin-bottom: 3mm; }
+.p7-header h2 { font-family: var(--font-display); font-weight: 600; font-size: 30pt; color: var(--semente); }
+.p7-grid { flex: 1; display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 1fr; gap: 2mm; }
+.gi { overflow: hidden; border-radius: 1mm; }
+.gi img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.gi-2c { grid-column: span 2; }
+.gi-2r { grid-row: span 2; }
+.gi-brand { background: var(--fruto); display: flex; align-items: center; justify-content: center; border-radius: 1mm; }
+.gi-brand svg { width: 70%; }
+.p7-footer { text-align: center; margin-top: 4mm; font-family: var(--font-body); font-size: 9pt; color: var(--semente); opacity: 0.4; }
+.p8 { background: var(--seiva); padding: 22mm 18mm; display: flex; flex-direction: column; position: relative; }
+.p8-deco { position: absolute; bottom: -15mm; right: -10mm; opacity: 0.04; }
+.p8-header { text-align: center; margin-bottom: 10mm; position: relative; z-index: 1; }
+.p8-header .tag { color: var(--caule); display: block; margin-bottom: 4mm; }
+.p8-header h2 { font-family: var(--font-display); font-weight: 600; font-size: 34pt; color: var(--terra); }
+.dep-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; flex: 1; position: relative; z-index: 1; }
+.dep { padding: 6mm 7mm; background: var(--cream); border-radius: 2mm; display: flex; flex-direction: column; position: relative; }
+.dep::before { content: '\201C'; position: absolute; top: 2mm; left: 5mm; font-size: 40pt; color: var(--fruto); opacity: 0.15; line-height: 1; }
+.dep-wide { grid-column: span 2; }
+.dep blockquote { font-family: var(--font-body); font-style: italic; font-size: 11pt; line-height: 1.5; color: var(--terra); flex: 1; padding-top: 2mm; }
+.dep cite { font-family: var(--font-sans); font-style: normal; font-size: 7pt; font-weight: 500; text-transform: uppercase; letter-spacing: 1.5pt; color: var(--caule); margin-top: 3mm; }
+.p8-note { text-align: center; margin-top: 5mm; font-family: var(--font-body); font-size: 9pt; color: var(--caule); opacity: 0.6; }
+.p9 { background: var(--terra); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30mm 25mm; text-align: center; position: relative; }
+.p9-deco { position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: center; opacity: 0.03; pointer-events: none; }
+.p9-content { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; }
+.p9-pre { font-family: var(--font-sans); text-transform: uppercase; font-size: 7pt; letter-spacing: 4pt; color: var(--semente); opacity: 0.45; margin-bottom: 10mm; }
+.p9-logo { width: 32mm; margin-bottom: 10mm; }
+.p9-title { font-family: var(--font-display); font-weight: 600; font-size: 32pt; color: var(--semente); line-height: 1.25; max-width: 145mm; margin-bottom: 8mm; }
+.p9-body { font-family: var(--font-body); font-size: 11pt; color: var(--semente); opacity: 0.7; line-height: 1.75; max-width: 130mm; margin-bottom: 16mm; }
+.contact-row { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm 16mm; border-top: 0.3mm solid rgba(224,223,177,0.15); border-bottom: 0.3mm solid rgba(224,223,177,0.15); padding: 7mm 0; margin-bottom: 16mm; width: 100%; max-width: 140mm; }
+.c-item { text-align: center; }
+.c-label { font-family: var(--font-sans); font-size: 6.5pt; font-weight: 500; text-transform: uppercase; letter-spacing: 2.5pt; color: var(--semente); opacity: 0.35; margin-bottom: 2mm; }
+.c-val { font-family: var(--font-sans); font-weight: 400; font-size: 10pt; color: var(--semente); opacity: 0.85; }
+.p9-closing { font-family: var(--font-display); font-style: italic; font-size: 15pt; color: var(--semente); opacity: 0.55; margin-bottom: 4mm; }
+.p9-brand { font-family: var(--font-sans); text-transform: uppercase; font-size: 7pt; letter-spacing: 4pt; font-weight: 300; color: var(--semente); opacity: 0.3; }
+.drop-zone { position: relative; cursor: pointer; }
+.drop-zone::after { content: 'Arraste uma foto'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--font-sans); font-size: 8pt; letter-spacing: 1pt; text-transform: uppercase; color: transparent; background: transparent; transition: all 0.2s; pointer-events: none; z-index: 10; border-radius: inherit; }
+.drop-zone:hover::after { color: var(--terra); background: rgba(224,223,177,0.5); }
+.drop-zone.drag-over::after { color: var(--terra); background: rgba(224,223,177,0.7); border: 2px dashed var(--fruto); }
+@media print { .drop-zone::after { display: none !important; } }
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+  <defs>
+    <symbol id="gpa" viewBox="0 0 200 60">
+      <path d="M15,5 L15,55 A25,25 0 0,0 15,5 Z" fill="currentColor"/>
+      <path d="M65,20 A20,20 0 0,0 105,20 Z" fill="currentColor"/>
+      <path d="M130,40 A20,20 0 0,1 170,40 Z" fill="currentColor"/>
+      <circle cx="157" cy="50" r="6" fill="currentColor"/>
+    </symbol>
+    <pattern id="estampa" x="0" y="0" width="140" height="100" patternUnits="userSpaceOnUse">
+      <path d="M10,8 L10,28 A10,10 0 0,0 10,8 Z" fill="currentColor"/>
+      <path d="M120,65 L120,85 A10,10 0 0,0 120,65 Z" fill="currentColor"/>
+      <path d="M40,15 A10,10 0 0,0 60,15 Z" fill="currentColor"/>
+      <path d="M85,70 A10,10 0 0,0 105,70 Z" fill="currentColor"/>
+      <path d="M70,35 A10,10 0 0,1 90,35 Z" fill="currentColor"/>
+      <path d="M20,70 A10,10 0 0,1 40,70 Z" fill="currentColor"/>
+      <circle cx="83" cy="40" r="3.5" fill="currentColor"/>
+      <circle cx="33" cy="75" r="3.5" fill="currentColor"/>
+      <path d="M110,20 L110,40 A10,10 0 0,0 110,20 Z" fill="currentColor"/>
+      <path d="M5,50 A8,8 0 0,0 21,50 Z" fill="currentColor"/>
+      <path d="M130,10 A8,8 0 0,0 146,10 Z" fill="currentColor"/>
+    </pattern>
+  </defs>
+</svg>
+
+<!-- PAGE 1 — CAPA -->
+<div class="page p1">
+  <svg class="p1-deco" width="80mm" height="80mm" viewBox="0 0 200 200" style="color:var(--terra);"><rect width="200" height="200" fill="url(#estampa)"/></svg>
+  <div class="p1-top">
+    <svg class="p1-logo" viewBox="0 0 200 60" style="color:var(--terra);"><use href="#gpa"/></svg>
+    <h1 class="p1-brand">Gestar Parir Amar</h1>
+    <p class="p1-sub">Samanta Giannico · Doula</p>
+    <p class="p1-tagline">Doulagem para<br>gestantes brasileiras</p>
+    <p class="p1-loc">Barcelona · São Paulo · Online</p>
+  </div>
+  <div class="p1-photo-strip">
+    <div class="strip-img"><img src="mp2wcu9x-barbarella_parto_isabelalellis-142.jpg" alt=""></div>
+    <div class="strip-img"><img src="mp2wcua6-IMG_5609-Aprimorado-NR-_1_.jpg" alt=""></div>
+    <div class="strip-img"><img src="mp2wcu85-311_NASC_MAVIE-11-_1_.jpg" alt=""></div>
+    <div class="strip-img"><img src="mp2wcuao-Juliana_parto_Luca-139.jpg" alt=""></div>
+  </div>
+  <div class="p1-footer"><span>Proposta · 2026</span></div>
+</div>
+
+<!-- PAGE 2 — QUEM SOU EU -->
+<div class="page p2">
+  <div class="p2-photo">
+    <img src="mp2vr0lm-Mai_cris_sa_-9785-_1_.jpg" alt="Samanta Giannico">
+    <div class="p2-photo-accent"></div>
+  </div>
+  <div class="p2-text">
+    <span class="tag">Quem sou eu</span>
+    <h2>Muito prazer,<br>sou a Samanta.</h2>
+    <p class="p2-body">Doula formada pelo GAMA — Grupo de Apoio à Maternidade Ativa — e em Arte do Parto com Naoli Vinaver, parteira tradicional referência latino-americana em parto humanizado. Pedagoga pelo Instituto Singularidades, vice-diretora da ADOSP, palestrante no Siaparto. Mãe da Iris e da Flora.</p>
+    <p class="p2-body">Em 2012, depois de uma experiência de violência obstétrica, fundei o Gestar Parir Amar, iniciativa que desde então democratiza o acesso à informação sobre parto evidenciado. Criadora da plataforma e aplicativo Gestar, Nascer, Crescer e facilitadora dos workshops Do Gestar ao Parir.</p>
+    <p class="p2-body">Hoje vivo em Barcelona e atendo presencialmente brasileiras na cidade. Sigo atendendo online o Brasil e o resto do mundo. Tudo, sempre, em português.</p>
+    <p class="p2-quote">"Vivi uma violência obstétrica e vivi um parto humanizado. Sei das duas experiências nos poros da minha pele."</p>
+  </div>
+  <svg class="p2-deco-spiral" width="60mm" height="60mm" viewBox="0 0 100 100" fill="none" stroke="var(--caule)" stroke-width="0.6">
+    <path d="M50 50 C50 42,58 38,62 42 C66 46,64 54,58 58 C52 62,44 60,40 54 C36 48,38 38,44 34 C50 30,60 32,64 38 C68 44,66 56,58 62 C50 68,38 66,32 58 C26 50,28 38,36 32 C44 26,56 28,64 36"/>
+  </svg>
+</div>
+
+<!-- PAGE 3 — PILARES -->
+<div class="page p3">
+  <div class="p3-header">
+    <span class="tag">Meu método</span>
+    <h2>Três pilares sustentam<br>tudo o que faço.</h2>
+  </div>
+  <p class="p3-subtitle">Um olhar integrativo, sutil e singular ao processo da perinatalidade.</p>
+  <div class="p3-photo-row">
+    <div class="pr-img"><img src="mp2wcu8a-1047P_B-_2_.jpg" alt="" style="object-position: center 60%;"></div>
+    <div class="pr-img"><img src="mp2wcu8u-1090P_B-_3_.jpg" alt="" style="object-position: center 40%;"></div>
+    <div class="pr-img"><img src="mp2wcu9a-1119P_B-_1_.jpg" alt="" style="object-position: center 50%;"></div>
+  </div>
+  <div class="p3-cards">
+    <div class="p3-card p3-card-1"><span class="num">01</span><h3>Emoção</h3><div class="divider"></div><p class="text">Escuta acolhedora, espaço seguro, sustentação afetiva ao longo de todo o ciclo gravídico-puerperal. Eu cuido de você enquanto você cuida do bebê.</p></div>
+    <div class="p3-card p3-card-2"><span class="num">02</span><h3>Corpo</h3><div class="divider"></div><p class="text">Trabalho somático, mobilidade facilitadora, alívio não-farmacológico da dor, presença encarnada no parto. Respirações, posições, hidroterapia, rebozo, Spinning Babies.</p></div>
+    <div class="p3-card p3-card-3"><span class="num">03</span><h3>Informação</h3><div class="divider"></div><p class="text">Educação perinatal baseada em evidências, plano de parto co-construído, autonomia para suas decisões. Conhecimento é poder durante a gestação, parto e puerpério.</p></div>
+  </div>
+  <div class="p3-footer"><svg class="p3-footer-logo" viewBox="0 0 200 60" style="color:var(--caule); opacity: 0.3;"><use href="#gpa"/></svg></div>
+</div>
+
+<!-- PAGE 4 — MODALIDADES -->
+<div class="page p4">
+  <div class="p4-photo-accent"><img src="mp2wcuan-Juliana_parto_Luca-114.jpg" alt=""></div>
+  <div class="p4-header"><span class="tag">Modalidades</span><h2>Três caminhos para<br>nos encontrarmos.</h2></div>
+  <div class="modalidade">
+    <div class="mod-icon"><svg width="20mm" height="20mm" viewBox="0 0 60 60" fill="none"><path d="M30 5 C15 15,10 30,15 45 C20 55,30 58,30 58 C30 58,40 55,45 45 C50 30,45 15,30 5Z" stroke="var(--caule)" stroke-width="1.2" fill="none"/><path d="M30 18 C26 24,24 32,26 40 C28 46,30 48,30 48" stroke="var(--caule)" stroke-width="0.7" fill="none"/></svg></div>
+    <div><h3>Presencial em Barcelona</h3><p>Atendo brasileiras em Barcelona e área metropolitana. Pré-natal em consultórios parceiros ou no seu lar. Parto em domicílio, casa de partos ou hospital — público (Clínic, Sant Joan de Déu, Vall d'Hebron, Sant Pau, Hospital del Mar) ou privado (Dexeus, Teknon, HM Nou Delfos, Quirónsalud).</p></div>
+  </div>
+  <div class="modalidade">
+    <div class="mod-icon"><svg width="20mm" height="20mm" viewBox="0 0 60 60" fill="none"><path d="M30 30 C30 25,35 22,38 25 C41 28,40 34,36 36 C32 38,26 37,24 33 C22 29,23 23,28 20 C33 17,40 18,43 23 C46 28,45 36,40 40 C35 44,27 43,23 38" stroke="var(--caule)" stroke-width="1.2" fill="none"/></svg></div>
+    <div><h3>Online · Brasil e mundo</h3><p>Para brasileiras em qualquer lugar. Pré-natais por videochamada, plano de parto co-construído, biblioteca virtual completa, plantão por WhatsApp e suporte às decisões durante o trabalho de parto.</p></div>
+  </div>
+  <div class="modalidade">
+    <div class="mod-icon"><svg width="20mm" height="20mm" viewBox="0 0 60 60" fill="none"><circle cx="30" cy="15" r="5" stroke="var(--caule)" stroke-width="1" fill="none"/><path d="M30 20 C30 20,22 28,22 38 C22 48,30 52,30 52 C30 52,38 48,38 38 C38 28,30 20,30 20Z" stroke="var(--caule)" stroke-width="1" fill="none"/></svg></div>
+    <div><h3>São Paulo · viagens programadas</h3><p>Em viagens ao Brasil, mantenho agenda presencial em São Paulo. Combinamos com antecedência.</p></div>
+  </div>
+  <div class="p4-footer"><span class="p4-footer-text">Atendimento sempre em português</span><svg class="p4-footer-logo" viewBox="0 0 200 60" style="color:var(--caule); opacity: 0.25;"><use href="#gpa"/></svg></div>
+</div>
+
+<!-- PAGE 5 — PACOTES -->
+<div class="page p5">
+  <div class="p5-header"><span class="tag">Investimento</span><h2>Quatro caminhos. Escolha o que<br>conversa com o seu momento.</h2></div>
+  <div class="p5-cards">
+    <div class="pk pk-cream"><div class="pk-name">Acolher</div><div class="pk-type">Essencial</div><ul><li>3 encontros de pré-natal</li><li>Plano de parto co-construído</li><li>Acompanhamento ao parto</li><li>1 visita de pós-parto</li><li>Plantão WhatsApp 30 dias</li><li>Biblioteca virtual</li><li>Doula backup sem custo</li></ul><div class="pk-line"></div><span class="pk-price">R$ 4.900</span><span class="pk-alt">ou € 1.050</span></div>
+    <div class="pk pk-terra"><div class="pk-name">Cuidar</div><div class="pk-type">Completo</div><ul><li>5 encontros de pré-natal</li><li>Plano de parto co-construído</li><li>Acompanhamento ao parto</li><li>2 visitas de pós-parto</li><li>Suporte aleitamento e sono</li><li>Plantão WhatsApp 60 dias</li><li>Spinning Babies + rebozo</li><li>Biblioteca virtual completa</li><li>Doula backup sem custo</li></ul><div class="pk-line"></div><span class="pk-price">R$ 5.500</span><span class="pk-alt">ou € 1.250</span></div>
+    <div class="pk pk-cream"><div class="pk-name">Sustentar</div><div class="pk-type">Imersivo</div><ul><li>5 pré-natais + ritual</li><li>Plano de parto co-construído</li><li>Acompanhamento ao parto</li><li>3 pós-parto + massagem</li><li>Babywearing (sling)</li><li>Carimbo de placenta</li><li>Plantão WhatsApp 90 dias</li><li>Mobilidade + ed. somática</li><li>Biblioteca virtual completa</li><li>Doula backup sem custo</li></ul><div class="pk-line"></div><span class="pk-price">R$ 6.200</span><span class="pk-alt">ou € 1.450</span></div>
+    <div class="pk pk-cream"><div class="pk-name">Online</div><div class="pk-type">À distância</div><ul><li>5 pré-natais por vídeo</li><li>Plano de parto co-construído</li><li>Plantão no trabalho de parto</li><li>2 pós-parto online</li><li>Biblioteca virtual completa</li><li>Suporte equipe local</li></ul><div class="pk-line"></div><span class="pk-price">R$ 3.200</span><span class="pk-alt">ou € 750</span></div>
+  </div>
+  <p class="p5-footer">Parcelamento personalizado · PIX, transferência bancária ou cartão · Conversamos sobre a sua necessidade.</p>
+</div>
+
+<!-- PAGE 6 — COMO FUNCIONA -->
+<div class="page p6">
+  <div class="p6-text">
+    <span class="tag">Passo a passo</span>
+    <h2>Um caminho simples<br>para começarmos juntas.</h2>
+    <div class="step"><span class="step-num">01</span><h3>Conversa inicial gratuita</h3><p>Por videochamada, 30 minutos. Você me conta sobre sua gestação, seu momento e suas dúvidas. Sem compromisso — é um momento para nos conhecermos.</p></div>
+    <div class="step"><span class="step-num">02</span><h3>Escolha do pacote</h3><p>Definimos juntas o caminho que faz mais sentido — Acolher, Cuidar, Sustentar ou Online — ajustando à sua singularidade.</p></div>
+    <div class="step"><span class="step-num">03</span><h3>Contrato e primeiro encontro</h3><p>Assinatura do contrato, primeiro pagamento e agendamento do nosso primeiro encontro de pré-natal.</p></div>
+    <div class="step"><span class="step-num">04</span><h3>Acompanhamento</h3><p>Encontros, plantão WhatsApp, plano de parto, parto e visitas de puerpério — seguindo o ritmo da sua gestação.</p></div>
+    <div class="step"><span class="step-num">05</span><h3>Reencontro pós-parto</h3><p>Visitas de puerpério, suporte em aleitamento e adaptação familiar. Fechamento do ciclo.</p></div>
+  </div>
+  <div class="p6-photo"><img src="mp2wcu9y-DSC_0033.jpg" alt=""></div>
+</div>
+
+<!-- PAGE 7 — GALERIA -->
+<div class="page p7">
+  <div class="p7-header"><span class="tag">Registros</span><h2>Cada nascimento, uma história.</h2></div>
+  <div class="p7-grid">
+    <div class="gi gi-2c gi-2r"><img src="mp2wcu9t-A-chegada-de-Joao-Lazaro-_58_-_2_.jpg" alt=""></div>
+    <div class="gi"><img src="mp2wcu85-311_NASC_MAVIE-11-_1_.jpg" alt=""></div>
+    <div class="gi"><img src="mp2wcua2-IMG_5538-Aprimorado-NR.jpg" alt=""></div>
+    <div class="gi"><img src="mp2wcu7a-33_parto-maria-flor_.jpg" alt=""></div>
+    <div class="gi-brand gi"><svg viewBox="0 0 200 60" style="color:var(--semente);"><use href="#gpa"/></svg></div>
+    <div class="gi gi-2c"><img src="mp2wcuac-IMG_5865-_1_.jpg" alt=""></div>
+    <div class="gi"><img src="mp2wcu8a-1047P_B-_2_.jpg" alt=""></div>
+    <div class="gi"><img src="mp2wcu9a-1119P_B-_1_.jpg" alt=""></div>
+    <div class="gi"><img src="mp2wcuap-SIAPARTOluminascer2-5.jpg" alt=""></div>
+    <div class="gi"><img src="mp2wcua0-DSC_0177.jpg" alt=""></div>
+    <div class="gi"><img src="mp2wcuan-Juliana_parto_Luca-114.jpg" alt=""></div>
+    <div class="gi gi-2c"><img src="mp2wcu9x-barbarella_parto_isabelalellis-142.jpg" alt=""></div>
+    <div class="gi"><img src="mp2wcuar-WhatsApp-Image-2023-02-14-at-15.07.06-_1_.jpeg" alt=""></div>
+  </div>
+  <p class="p7-footer">Imagens cedidas pelas famílias · Acervo pessoal e fotógrafas parceiras</p>
+</div>
+
+<!-- PAGE 8 — DEPOIMENTOS -->
+<div class="page p8">
+  <svg class="p8-deco" width="100mm" height="100mm" viewBox="0 0 140 100" style="color:var(--fruto);"><rect width="140" height="100" fill="url(#estampa)"/></svg>
+  <div class="p8-header"><span class="tag">Quem já caminhou comigo</span><h2>Palavras que carrego.</h2></div>
+  <div class="dep-grid">
+    <div class="dep"><blockquote>"A Samantha foi fundamental para a minha entrega ao parto. Ela me ajudou a romper todas as crenças e barreiras que me distanciavam de um parto natural. Durante o parto, sentia que sua presença, silêncio e palavras sempre chegavam no momento certo."</blockquote><cite>— Isabella Lellis</cite></div>
+    <div class="dep"><blockquote>"A Samantha tem o dom da escuta, uma sensibilidade e intuição de saber dizer exatamente o que você precisa escutar. Como se chegasse com as peças de um quebra-cabeça que estavam faltando. Uma lanterna em uma caverna escura."</blockquote><cite>— Izabel Nobre</cite></div>
+    <div class="dep dep-wide"><blockquote>"Sem palavras, você foi impecável! Um apoio amoroso extremamente essencial e com várias ferramentas pra manejar a situação. Me senti 100% cuidada, zelada, vista, e por uma mulher forte, que sustenta o trabalho. Gratidão pelo seu serviço, é de tirar o chapéu!"</blockquote><cite>— Mariana Louver</cite></div>
+    <div class="dep"><blockquote>"A doulagem fez muita diferença pra gente, e nós pudemos experimentar tudo com mais segurança e autonomia. Fomos recompensados com um parto lindo. A Jef sempre consciente, sem sedações e sempre tratada com respeito."</blockquote><cite>— Jéssica · Doulagem social</cite></div>
+    <div class="dep"><blockquote>"Os nossos encontros me fizeram ter um parto seguro — e digo seguro de estar segura, tranquila e confiante. Ter você como doula e rede de apoio foi essencial para que eu acreditasse em um parto de confiança e tranquilidade."</blockquote><cite>— Mãe da Helena</cite></div>
+  </div>
+  <p class="p8-note">Depoimentos reais de gestantes acompanhadas.</p>
+</div>
+
+<!-- PAGE 9 — CONVITE FINAL -->
+<div class="page p9">
+  <div class="p9-deco"><svg width="180mm" height="180mm" viewBox="0 0 140 100" style="color:var(--semente);"><rect width="140" height="100" fill="url(#estampa)"/></svg></div>
+  <div class="p9-content">
+    <span class="p9-pre">Vamos começar</span>
+    <svg class="p9-logo" viewBox="0 0 200 60" style="color:var(--semente);"><use href="#gpa"/></svg>
+    <h2 class="p9-title">Obrigada por considerar caminhar comigo nesse ciclo.</h2>
+    <p class="p9-body">Quando quiser conversar, estou aqui. O primeiro encontro é por minha conta — sem compromisso, sem pressão, sem fórmula. Só uma escuta para descobrirmos juntas se faz sentido.</p>
+    <div class="contact-row">
+      <div class="c-item"><div class="c-label">WhatsApp</div><div class="c-val">+55 11 5198-8223</div></div>
+      <div class="c-item"><div class="c-label">Instagram</div><div class="c-val">@gestar_parir_amar</div></div>
+      <div class="c-item"><div class="c-label">Link na bio</div><div class="c-val">linktr.ee/GestarParirAmar</div></div>
+      <div class="c-item"><div class="c-label">App / Curso</div><div class="c-val">Gestar, Nascer, Crescer</div></div>
+    </div>
+    <p class="p9-closing">Por gestar. Por parir. Por amar.</p>
+    <span class="p9-brand">Gestar Parir Amar</span>
+  </div>
+</div>
+
+<script>
+(function() {
+  document.querySelectorAll('.strip-img, .p2-photo, .pr-img, .p4-photo-accent, .p5-photo-strip, .p6-photo, .gi:not(.gi-brand)').forEach(function(el) {
+    el.classList.add('drop-zone');
+    el.addEventListener('dragover', function(e) { e.preventDefault(); el.classList.add('drag-over'); });
+    el.addEventListener('dragleave', function() { el.classList.remove('drag-over'); });
+    el.addEventListener('drop', function(e) {
+      e.preventDefault(); el.classList.remove('drag-over');
+      var file = e.dataTransfer.files[0];
+      if (file && file.type.startsWith('image/')) {
+        var reader = new FileReader();
+        reader.onload = function(evt) {
+          var img = el.querySelector('img');
+          if (img) { img.src = evt.target.result; }
+          else { img = document.createElement('img'); img.src = evt.target.result; img.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block'; el.appendChild(img); }
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+    el.addEventListener('click', function() {
+      var input = document.createElement('input'); input.type = 'file'; input.accept = 'image/*';
+      input.onchange = function() {
+        var file = input.files[0];
+        if (file) {
+          var reader = new FileReader();
+          reader.onload = function(evt) {
+            var img = el.querySelector('img');
+            if (img) { img.src = evt.target.result; }
+            else { img = document.createElement('img'); img.src = evt.target.result; img.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block'; el.appendChild(img); }
+          };
+          reader.readAsDataURL(file);
+        }
+      };
+      input.click();
+    });
+  });
+})();
+</script>
+</body>
+</html>
