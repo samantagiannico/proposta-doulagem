@@ -7,29 +7,41 @@
 <title>Proposta de Doulagem — Gestar Parir Amar</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Serif+4:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Libre+Franklin:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Libre+Franklin:wght@300;400;500;600&family=Bitter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/open-sauce-one@5.0.3/index.min.css" rel="stylesheet">
 <style>
 @page { size: A4 portrait; margin: 0; }
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 :root {
   --terra: #5A372B; --caule: #935A3D; --fruto: #A73E2B; --flor: #97262B;
   --semente: #E0DFB1; --seiva: #F5F4D7; --cream: #FAF9EE;
-  --font-display: 'Playfair Display', 'Georgia', serif;
-  --font-body: 'Source Serif 4', 'Georgia', serif;
+  --font-display: 'DM Sans', 'Helvetica Neue', sans-serif;
+  --font-body: 'Open Sauce One', 'Open Sans', 'Helvetica Neue', sans-serif;
   --font-sans: 'Libre Franklin', 'Helvetica Neue', sans-serif;
+  --font-hand: 'Bitter', Georgia, serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
 }
 html, body { background: var(--cream); font-family: var(--font-body); color: var(--terra); -webkit-font-smoothing: antialiased; }
 .page { width: 210mm; height: 297mm; margin: 0 auto; position: relative; overflow: hidden; page-break-after: always; page-break-inside: avoid; }
 .page + .page { margin-top: 2mm; }
 @media print { .page + .page { margin-top: 0; } body { background: white; } }
 .tag { font-family: var(--font-sans); text-transform: uppercase; font-size: 7.5pt; letter-spacing: 3pt; font-weight: 500; }
-.p1 { background: var(--seiva); display: flex; flex-direction: column; align-items: center; padding: 35mm 25mm 0; }
-.p1-top { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; position: relative; z-index: 2; }
-.p1-logo { width: 42mm; margin-bottom: 10mm; }
-.p1-brand { font-family: var(--font-sans); font-weight: 300; font-size: 22pt; color: var(--terra); letter-spacing: 5pt; text-transform: uppercase; margin-bottom: 3mm; }
-.p1-sub { font-family: var(--font-sans); font-weight: 300; font-size: 9pt; color: var(--caule); letter-spacing: 2pt; margin-bottom: 18mm; }
-.p1-tagline { font-family: var(--font-display); font-weight: 500; font-size: 26pt; color: var(--terra); line-height: 1.3; margin-bottom: 4mm; }
-.p1-loc { font-family: var(--font-sans); font-weight: 300; font-size: 9pt; color: var(--caule); letter-spacing: 1.5pt; margin-bottom: 10mm; }
+.p1 { background: var(--seiva); display: flex; flex-direction: column; align-items: center; padding: 35mm 25mm 0; position: relative; }
+.p1-bg-photo { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.p1-bg-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; filter: blur(8px) saturate(0.4) brightness(0.3); transform: scale(1.05); }
+.p1-bg-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(90,55,43,0.75) 0%, rgba(90,55,43,0.5) 50%, rgba(90,55,43,0.3) 100%); }
+.p1-top { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: space-between; text-align: center; position: relative; z-index: 2; width: 100%; padding: 15mm 0 10mm; }
+.p1-logo { width: 22mm !important; max-width: 22mm !important; margin-bottom: 6mm; display: block; z-index: 5; }
+.logo-img { display: block; width: 100%; height: auto; }
+.p1-name { font-family: var(--font-serif); font-weight: 400; font-style: italic; font-size: 40pt; color: var(--semente); letter-spacing: 1pt; margin-bottom: 4mm; }
+.p1-cred { font-family: var(--font-sans); font-weight: 400; font-size: 7.5pt; color: var(--semente); opacity: 0.55; letter-spacing: 2.5pt; text-transform: uppercase; margin-bottom: 0; }
+.p1-top-group { display: flex; flex-direction: column; align-items: center; }
+.p1-bottom-group { display: flex; flex-direction: column; align-items: center; }
+.p1-sep { width: 25mm; height: 0.4mm; background: var(--fruto); opacity: 0.4; margin: 6mm 0; }
+.p1-tagline { font-family: var(--font-sans); font-weight: 300; font-size: 9pt; color: var(--semente); opacity: 0.5; line-height: 1.6; margin-bottom: 5mm; letter-spacing: 2.5pt; text-transform: uppercase; }
+.p1-loc { font-family: var(--font-sans); font-weight: 500; font-size: 10pt; color: var(--semente); opacity: 0.7; letter-spacing: 3.5pt; text-transform: uppercase; margin-bottom: 0; }
+.p1-hook { font-family: var(--font-serif); font-weight: 400; font-style: italic; font-size: 24pt; color: var(--semente); line-height: 1.35; margin-bottom: 8mm; max-width: 140mm; }
+.p1-strip-gap { width: calc(100% + 50mm); margin: 0 -25mm; height: 3mm; background: var(--terra); }
 .p1-photo-strip { width: calc(100% + 50mm); margin: 0 -25mm; height: 85mm; display: grid; grid-template-columns: 1.4fr 1fr 1fr 1.4fr; gap: 1.5mm; }
 .p1-photo-strip .strip-img { overflow: hidden; }
 .p1-photo-strip .strip-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -44,38 +56,37 @@ html, body { background: var(--cream); font-family: var(--font-body); color: var
 .p2-text .tag { color: var(--caule); margin-bottom: 5mm; }
 .p2-text h2 { font-family: var(--font-display); font-weight: 600; font-size: 34pt; color: var(--terra); line-height: 1.1; margin-bottom: 8mm; }
 .p2-body { font-family: var(--font-body); font-size: 10.5pt; line-height: 1.65; color: var(--caule); margin-bottom: 3.5mm; }
-.p2-quote { margin-top: auto; padding-top: 6mm; border-top: 0.5pt solid var(--caule); font-family: var(--font-display); font-style: italic; font-size: 14pt; line-height: 1.45; color: var(--flor); }
+.p2-body strong { font-weight: 600; color: var(--terra); }
+.p2-quote { margin-top: auto; padding-top: 6mm; border-top: 0.5pt solid var(--fruto); font-family: var(--font-serif); font-style: italic; font-size: 15pt; line-height: 1.5; color: var(--flor); }
 .p2-deco-spiral { position: absolute; bottom: 18mm; right: 16mm; opacity: 0.08; }
-.p3 { background: var(--seiva); padding: 22mm 18mm; display: flex; flex-direction: column; }
-.p3-header { text-align: center; margin-bottom: 4mm; }
-.p3-header .tag { color: var(--caule); display: block; margin-bottom: 4mm; }
-.p3-header h2 { font-family: var(--font-display); font-weight: 600; font-size: 34pt; color: var(--terra); line-height: 1.1; margin-bottom: 3mm; }
-.p3-subtitle { font-family: var(--font-body); font-weight: 300; font-size: 13pt; color: var(--caule); text-align: center; margin-bottom: 10mm; }
-.p3-photo-row { display: grid; grid-template-columns: 1fr 1.6fr 1fr; gap: 2mm; height: 55mm; margin-bottom: 8mm; border-radius: 2mm; overflow: hidden; }
-.p3-photo-row .pr-img { overflow: hidden; }
-.p3-photo-row .pr-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.p3-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5mm; flex: 1; }
-.p3-card { padding: 7mm 7mm; border-radius: 2.5mm; display: flex; flex-direction: column; }
-.p3-card-1 { background: var(--terra); color: var(--semente); }
-.p3-card-2 { background: var(--cream); color: var(--terra); border: 0.3mm solid var(--caule); }
-.p3-card-3 { background: var(--terra); color: var(--semente); }
-.p3-card .num { font-family: var(--font-display); font-weight: 700; font-size: 48pt; line-height: 1; margin-bottom: 3mm; }
-.p3-card-1 .num, .p3-card-3 .num { color: var(--semente); opacity: 0.3; }
-.p3-card-2 .num { color: var(--fruto); opacity: 0.4; }
-.p3-card h3 { font-family: var(--font-sans); font-weight: 600; font-size: 11pt; letter-spacing: 3pt; text-transform: uppercase; margin-bottom: 4mm; }
-.p3-card .divider { width: 14mm; height: 0.4mm; margin-bottom: 4mm; }
-.p3-card-1 .divider, .p3-card-3 .divider { background: var(--semente); opacity: 0.25; }
-.p3-card-2 .divider { background: var(--fruto); opacity: 0.5; }
-.p3-card .text { font-family: var(--font-body); font-size: 9.5pt; line-height: 1.55; }
-.p3-card-1 .text, .p3-card-3 .text { opacity: 0.85; }
-.p3-footer { text-align: center; margin-top: 6mm; }
-.p3-footer-logo { width: 20mm; }
-.p4 { background: var(--cream); padding: 22mm 20mm; display: flex; flex-direction: column; }
-.p4-header { margin-bottom: 10mm; }
+.p3 { position: relative; overflow: hidden; }
+.p3-bg { position: absolute; inset: 0; z-index: 0; }
+.p3-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; filter: brightness(0.25) saturate(0.5); }
+.p3-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(90,55,43,0.6) 0%, rgba(90,55,43,0.85) 100%); }
+.p3-content { position: relative; z-index: 1; padding: 28mm 20mm 20mm; display: flex; flex-direction: column; height: 100%; }
+.p3-header { margin-bottom: 6mm; }
+.p3-header .tag { color: var(--semente); opacity: 0.5; display: block; margin-bottom: 4mm; }
+.p3-header h2 { font-family: var(--font-display); font-weight: 600; font-size: 36pt; color: var(--semente); line-height: 1.1; margin-bottom: 3mm; }
+.p3-subtitle { font-family: var(--font-body); font-weight: 300; font-size: 13pt; color: var(--semente); opacity: 0.6; margin-bottom: 12mm; }
+.p3-pillars { display: flex; flex-direction: column; gap: 8mm; flex: 1; justify-content: center; }
+.p3-pillar { display: grid; grid-template-columns: 60mm 1fr; gap: 6mm; align-items: start; }
+.p3-pillar-num { font-family: var(--font-display); font-weight: 700; font-size: 72pt; line-height: 0.85; color: var(--semente); opacity: 0.12; }
+.p3-pillar-content {}
+.p3-pillar h3 { font-family: var(--font-sans); font-weight: 600; font-size: 12pt; letter-spacing: 3pt; text-transform: uppercase; color: var(--semente); margin-bottom: 2mm; }
+.p3-pillar-line { width: 20mm; height: 0.4mm; background: var(--fruto); margin-bottom: 3mm; }
+.p3-pillar p { font-family: var(--font-body); font-size: 10pt; line-height: 1.55; color: var(--semente); opacity: 0.8; }
+.p3-footer { text-align: center; margin-top: auto; padding-top: 6mm; }
+.p3-footer-logo { width: 20mm; opacity: 0.3; }
+.p4 { background: var(--cream); padding: 22mm 20mm; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+.p4-deco { position: absolute; bottom: -12mm; left: -8mm; opacity: 0.035; pointer-events: none; }
+.p4-header { margin-bottom: 6mm; }
 .p4-header .tag { color: var(--caule); margin-bottom: 4mm; display: block; }
-.p4-header h2 { font-family: var(--font-display); font-weight: 600; font-size: 34pt; color: var(--terra); line-height: 1.1; }
-.modalidade { display: grid; grid-template-columns: 22mm 1fr; gap: 5mm; align-items: start; padding: 7mm 0; border-bottom: 0.3pt solid var(--semente); }
-.modalidade:last-of-type { border-bottom: none; }
+.p4-header h2 { font-family: var(--font-display); font-weight: 600; font-size: 34pt; color: var(--terra); line-height: 1.1; margin-bottom: 5mm; }
+.p4-header-line { width: 30mm; height: 0.5mm; background: var(--fruto); opacity: 0.5; margin-bottom: 8mm; }
+.modalidade { display: grid; grid-template-columns: 10mm 1fr; gap: 4mm; align-items: start; padding: 7mm 0; border-bottom: none; position: relative; }
+.modalidade + .modalidade { padding-top: 7mm; }
+.modalidade + .modalidade::before { content: ''; position: absolute; top: 0; left: 10mm; right: 0; height: 0.3pt; background: var(--semente); }
+.mod-num { font-family: var(--font-display); font-weight: 700; font-size: 22pt; color: var(--caule); opacity: 0.2; line-height: 1; padding-top: 1mm; }
 .mod-icon { width: 22mm; height: 22mm; }
 .modalidade h3 { font-family: var(--font-display); font-weight: 600; font-size: 18pt; color: var(--terra); margin-bottom: 2mm; }
 .modalidade p { font-family: var(--font-body); font-size: 10pt; line-height: 1.55; color: var(--caule); }
@@ -84,30 +95,36 @@ html, body { background: var(--cream); font-family: var(--font-body); color: var
 .p4-footer-logo { width: 16mm; }
 .p4-photo-accent { position: absolute; right: 0; top: 50%; transform: translateY(-50%); width: 22mm; height: 120mm; overflow: hidden; border-radius: 2mm 0 0 2mm; }
 .p4-photo-accent img { width: 100%; height: 100%; object-fit: cover; }
-.p5 { background: var(--seiva); padding: 18mm 12mm 12mm; display: flex; flex-direction: column; }
+.p5 { background: var(--cream); padding: 18mm 12mm 12mm; display: flex; flex-direction: column; }
 .p5-header { text-align: center; margin-bottom: 6mm; }
 .p5-header .tag { color: var(--caule); display: block; margin-bottom: 3mm; }
 .p5-header h2 { font-family: var(--font-display); font-weight: 600; font-size: 28pt; color: var(--terra); }
-.p5-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; flex: 1; }
-.pk { padding: 5mm 4.5mm; border-radius: 2mm; display: flex; flex-direction: column; }
+.p5-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3.5mm; }
+.pk { padding: 6mm 5mm; border-radius: 2mm; display: flex; flex-direction: column; }
 .pk-cream { background: var(--cream); border: 0.3mm solid var(--semente); color: var(--terra); }
 .pk-terra { background: var(--terra); color: var(--semente); }
-.pk-name { font-family: var(--font-display); font-weight: 700; font-size: 15pt; margin-bottom: 0.5mm; }
-.pk-type { font-family: var(--font-sans); font-size: 6.5pt; font-weight: 500; text-transform: uppercase; letter-spacing: 2pt; margin-bottom: 4mm; }
+.pk-fruto { background: var(--fruto); color: var(--cream); }
+.pk-fruto .pk-type { color: var(--cream); opacity: 0.6; }
+.pk-fruto li::before { background: var(--cream); opacity: 0.5; }
+.pk-fruto .pk-line { background: var(--cream); opacity: 0.25; }
+.pk-fruto .pk-price { color: var(--cream); }
+.pk-fruto .pk-alt { color: var(--cream); opacity: 0.7; }
+.pk-name { font-family: var(--font-display); font-weight: 700; font-size: 17pt; margin-bottom: 1mm; }
+.pk-type { font-family: var(--font-sans); font-size: 7.5pt; font-weight: 500; text-transform: uppercase; letter-spacing: 2pt; margin-bottom: 4mm; }
 .pk-cream .pk-type { color: var(--caule); }
 .pk-terra .pk-type { color: var(--semente); opacity: 0.5; }
-.pk ul { list-style: none; font-family: var(--font-body); font-size: 7.5pt; line-height: 1.5; flex: 1; }
-.pk li { padding-left: 3mm; position: relative; margin-bottom: 1.2mm; }
+.pk ul { list-style: none; font-family: var(--font-body); font-size: 9.5pt; line-height: 1.55; flex: 1; }
+.pk li { padding-left: 3.5mm; position: relative; margin-bottom: 1.8mm; }
 .pk li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 1mm; height: 1mm; border-radius: 50%; }
 .pk-cream li::before { background: var(--fruto); }
 .pk-terra li::before { background: var(--semente); opacity: 0.4; }
 .pk .pk-line { width: 12mm; height: 0.3mm; margin: 2.5mm 0; }
 .pk-cream .pk-line { background: var(--caule); opacity: 0.3; }
 .pk-terra .pk-line { background: var(--semente); opacity: 0.2; }
-.pk-price { font-family: var(--font-display); font-weight: 700; font-size: 18pt; }
+.pk-price { font-family: var(--font-display); font-weight: 700; font-size: 20pt; }
 .pk-cream .pk-price { color: var(--flor); }
 .pk-terra .pk-price { color: var(--semente); }
-.pk-alt { font-family: var(--font-sans); font-size: 7.5pt; font-weight: 300; margin-top: 0.5mm; }
+.pk-alt { font-family: var(--font-sans); font-size: 8.5pt; font-weight: 300; margin-top: 1mm; }
 .pk-cream .pk-alt { color: var(--caule); }
 .pk-terra .pk-alt { color: var(--semente); opacity: 0.6; }
 .p5-footer { text-align: center; margin-top: 4mm; font-family: var(--font-body); font-size: 9pt; color: var(--caule); }
@@ -124,59 +141,95 @@ html, body { background: var(--cream); font-family: var(--font-body); color: var
 .p6-photo { position: relative; overflow: hidden; }
 .p6-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
 .p6-photo::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2mm; background: var(--fruto); z-index: 1; }
-.p7 { background: var(--terra); padding: 14mm 10mm 10mm; display: flex; flex-direction: column; }
-.p7-header { text-align: center; margin-bottom: 5mm; }
-.p7-header .tag { color: var(--caule); display: block; margin-bottom: 3mm; }
-.p7-header h2 { font-family: var(--font-display); font-weight: 600; font-size: 30pt; color: var(--semente); }
-.p7-grid { flex: 1; display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 1fr; gap: 2mm; }
-.gi { overflow: hidden; border-radius: 1mm; }
-.gi img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.gi-2c { grid-column: span 2; }
-.gi-2r { grid-row: span 2; }
-.gi-brand { background: var(--fruto); display: flex; align-items: center; justify-content: center; border-radius: 1mm; }
-.gi-brand svg { width: 70%; }
-.p7-footer { text-align: center; margin-top: 4mm; font-family: var(--font-body); font-size: 9pt; color: var(--semente); opacity: 0.4; }
-.p8 { background: var(--seiva); padding: 22mm 18mm; display: flex; flex-direction: column; position: relative; }
+.p7 { background: var(--terra); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30mm 0; position: relative; }
+.p7-header { text-align: center; margin-bottom: 12mm; padding: 0 25mm; }
+.p7-header .tag { color: var(--caule); display: block; margin-bottom: 4mm; }
+.p7-header h2 { font-family: var(--font-serif); font-weight: 500; font-style: italic; font-size: 34pt; color: var(--semente); }
+.p7-strip { width: 100%; display: flex; gap: 2mm; padding: 0; overflow: hidden; }
+.p7-strip .gs { flex: 1; height: 75mm; overflow: hidden; }
+.p7-strip .gs-wide { flex: 1.8; }
+.p7-strip .gs img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.p7-strip-2 { margin-top: 2mm; }
+.p7-logo { width: 25mm; margin-top: 16mm; opacity: 0.2; }
+.p7-footer { text-align: center; margin-top: 6mm; font-family: var(--font-body); font-size: 8pt; color: var(--semente); opacity: 0.3; padding: 0 25mm; }
+.p8 { background: var(--cream); padding: 22mm 18mm; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+.p8-bg-photo { position: absolute; top: -5mm; right: -5mm; width: 55%; height: 50%; z-index: 0; overflow: hidden; border-radius: 0 0 0 50%; opacity: 0.06; }
+.p8-bg-photo img { width: 100%; height: 100%; object-fit: cover; filter: saturate(0); }
 .p8-deco { position: absolute; bottom: -15mm; right: -10mm; opacity: 0.04; }
 .p8-header { text-align: center; margin-bottom: 10mm; position: relative; z-index: 1; }
-.p8-header .tag { color: var(--caule); display: block; margin-bottom: 4mm; }
-.p8-header h2 { font-family: var(--font-display); font-weight: 600; font-size: 34pt; color: var(--terra); }
+.p8-header .tag { color: var(--fruto); display: block; margin-bottom: 4mm; }
+.p8-header h2 { font-family: var(--font-serif); font-weight: 500; font-style: italic; font-size: 36pt; color: var(--flor); }
 .dep-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; flex: 1; position: relative; z-index: 1; }
 .dep { padding: 6mm 7mm; background: var(--cream); border-radius: 2mm; display: flex; flex-direction: column; position: relative; }
-.dep::before { content: '\201C'; position: absolute; top: 2mm; left: 5mm; font-size: 40pt; color: var(--fruto); opacity: 0.15; line-height: 1; }
+.dep::before { content: '\201C'; position: absolute; top: 0mm; left: 4mm; font-family: var(--font-serif); font-size: 52pt; color: var(--flor); opacity: 0.2; line-height: 1; }
 .dep-wide { grid-column: span 2; }
-.dep blockquote { font-family: var(--font-body); font-style: italic; font-size: 11pt; line-height: 1.5; color: var(--terra); flex: 1; padding-top: 2mm; }
-.dep cite { font-family: var(--font-sans); font-style: normal; font-size: 7pt; font-weight: 500; text-transform: uppercase; letter-spacing: 1.5pt; color: var(--caule); margin-top: 3mm; }
+.dep blockquote { font-family: var(--font-hand); font-style: italic; font-size: 12pt; line-height: 1.5; color: var(--terra); flex: 1; padding-top: 2mm; }
+.dep blockquote strong { font-weight: 700; color: var(--flor); }
+.dep cite { font-family: var(--font-sans); font-style: normal; font-size: 7pt; font-weight: 500; text-transform: uppercase; letter-spacing: 1.5pt; color: var(--fruto); margin-top: 3mm; }
 .p8-note { text-align: center; margin-top: 5mm; font-family: var(--font-body); font-size: 9pt; color: var(--caule); opacity: 0.6; }
-.p9 { background: var(--terra); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30mm 25mm; text-align: center; position: relative; }
+.p9 { background: var(--terra); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30mm 25mm; text-align: center; position: relative; overflow: hidden; }
+.p9-bg-photo { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.p9-bg-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 50%; filter: blur(6px) saturate(0.3) brightness(0.25); transform: scale(1.05); }
+.p9-bg-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(90,55,43,0.7) 0%, rgba(90,55,43,0.55) 50%, rgba(90,55,43,0.8) 100%); }
 .p9-deco { position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: center; opacity: 0.03; pointer-events: none; }
 .p9-content { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; }
-.p9-pre { font-family: var(--font-sans); text-transform: uppercase; font-size: 7pt; letter-spacing: 4pt; color: var(--semente); opacity: 0.45; margin-bottom: 10mm; }
-.p9-logo { width: 32mm; margin-bottom: 10mm; }
-.p9-title { font-family: var(--font-display); font-weight: 600; font-size: 32pt; color: var(--semente); line-height: 1.25; max-width: 145mm; margin-bottom: 8mm; }
-.p9-body { font-family: var(--font-body); font-size: 11pt; color: var(--semente); opacity: 0.7; line-height: 1.75; max-width: 130mm; margin-bottom: 16mm; }
+.p9-pre { font-family: var(--font-sans); text-transform: uppercase; font-size: 7pt; letter-spacing: 4pt; color: var(--semente); opacity: 0.35; margin-bottom: 8mm; }
+.p9-logo { width: 28mm; margin-bottom: 12mm; display: block; opacity: 0.6; }
+.p9-title { font-family: var(--font-serif); font-weight: 500; font-style: italic; font-size: 30pt; color: var(--semente); line-height: 1.3; max-width: 130mm; margin-bottom: 10mm; }
+.p9-note { font-family: var(--font-body); font-size: 10pt; color: var(--semente); opacity: 0.55; line-height: 1.7; max-width: 120mm; margin-bottom: 14mm; }
 .contact-row { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm 16mm; border-top: 0.3mm solid rgba(224,223,177,0.15); border-bottom: 0.3mm solid rgba(224,223,177,0.15); padding: 7mm 0; margin-bottom: 16mm; width: 100%; max-width: 140mm; }
 .c-item { text-align: center; }
 .c-label { font-family: var(--font-sans); font-size: 6.5pt; font-weight: 500; text-transform: uppercase; letter-spacing: 2.5pt; color: var(--semente); opacity: 0.35; margin-bottom: 2mm; }
 .c-val { font-family: var(--font-sans); font-weight: 400; font-size: 10pt; color: var(--semente); opacity: 0.85; }
-.p9-closing { font-family: var(--font-display); font-style: italic; font-size: 15pt; color: var(--semente); opacity: 0.55; margin-bottom: 4mm; }
+.p9-closing { font-family: var(--font-hand); font-size: 20pt; color: var(--semente); opacity: 0.7; margin-bottom: 4mm; }
 .p9-brand { font-family: var(--font-sans); text-transform: uppercase; font-size: 7pt; letter-spacing: 4pt; font-weight: 300; color: var(--semente); opacity: 0.3; }
 .drop-zone { position: relative; cursor: pointer; }
 .drop-zone::after { content: 'Arraste uma foto'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: var(--font-sans); font-size: 8pt; letter-spacing: 1pt; text-transform: uppercase; color: transparent; background: transparent; transition: all 0.2s; pointer-events: none; z-index: 10; border-radius: inherit; }
 .drop-zone:hover::after { color: var(--terra); background: rgba(224,223,177,0.5); }
 .drop-zone.drag-over::after { color: var(--terra); background: rgba(224,223,177,0.7); border: 2px dashed var(--fruto); }
-@media print { .drop-zone::after { display: none !important; } }
+@media print { .drop-zone::after { display: none !important; } .ed-active { outline: none !important; box-shadow: none !important; } }
+.ed-active { outline: 1.5px solid var(--fruto) !important; outline-offset: 2px; border-radius: 2px; cursor: text; }
+.draggable { cursor: grab; user-select: none; }
+.draggable:active, .dragging { cursor: grabbing !important; }
+.drag-selected { outline: 2px solid var(--fruto) !important; outline-offset: 3px; }
+.drag-handle {
+  position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
+  width: 24px; height: 8px; background: var(--fruto); border-radius: 4px;
+  cursor: grab; z-index: 100; opacity: 0; transition: opacity 0.15s;
+  pointer-events: auto;
+}
+.drag-selected .drag-handle, .draggable:hover > .drag-handle { opacity: 0.7; }
+.mode-toggle {
+  position: fixed; top: 12px; right: 16px; z-index: 10000;
+  display: flex; gap: 4px; background: var(--terra); border-radius: 8px;
+  padding: 4px; box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+.mode-toggle button {
+  background: transparent; border: none; color: var(--semente);
+  font-family: var(--font-sans); font-size: 11px; font-weight: 500;
+  padding: 6px 12px; border-radius: 5px; cursor: pointer;
+  transition: background 0.15s; letter-spacing: 0.5px;
+}
+.mode-toggle button:hover { background: rgba(224,223,177,0.12); }
+.mode-toggle button.active { background: var(--fruto); color: var(--semente); }
+@media print { .mode-toggle { display: none !important; } .drag-handle { display: none !important; } .drag-selected { outline: none !important; } }
+.ed-toolbar { position: fixed; top: 12px; left: 50%; transform: translateX(-50%); z-index: 9999; background: var(--terra); border-radius: 8px; padding: 6px 10px; display: flex; align-items: center; gap: 4px; box-shadow: 0 4px 20px rgba(0,0,0,0.25); font-family: var(--font-sans); opacity: 0; pointer-events: none; transition: opacity 0.15s; }
+.ed-toolbar.visible { opacity: 1; pointer-events: auto; }
+.ed-toolbar button { background: transparent; border: none; color: var(--semente); font-size: 13px; width: 30px; height: 28px; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-family: var(--font-sans); font-weight: 600; transition: background 0.1s; }
+.ed-toolbar button:hover { background: rgba(224,223,177,0.15); }
+.ed-toolbar button.active { background: rgba(224,223,177,0.25); }
+.ed-toolbar .ed-sep { width: 1px; height: 18px; background: rgba(224,223,177,0.2); margin: 0 3px; }
+.ed-toolbar .ed-size-label { color: var(--semente); font-size: 10px; min-width: 32px; text-align: center; opacity: 0.7; user-select: none; }
+.ed-color-dot { width: 16px; height: 16px; border-radius: 50%; border: 2px solid transparent; cursor: pointer; transition: border-color 0.1s; }
+.ed-color-dot:hover, .ed-color-dot.active { border-color: var(--semente); }
+.ed-hint { position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%); z-index: 9998; background: var(--terra); color: var(--semente); font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.5px; padding: 8px 16px; border-radius: 6px; opacity: 0.7; pointer-events: none; transition: opacity 0.3s; }
+.ed-hint.hidden { opacity: 0; }
+@media print { .ed-hint { display: none !important; } .ed-toolbar { display: none !important; } }
 </style>
 </head>
 <body>
 <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
   <defs>
-    <symbol id="gpa" viewBox="0 0 200 60">
-      <path d="M15,5 L15,55 A25,25 0 0,0 15,5 Z" fill="currentColor"/>
-      <path d="M65,20 A20,20 0 0,0 105,20 Z" fill="currentColor"/>
-      <path d="M130,40 A20,20 0 0,1 170,40 Z" fill="currentColor"/>
-      <circle cx="157" cy="50" r="6" fill="currentColor"/>
-    </symbol>
     <pattern id="estampa" x="0" y="0" width="140" height="100" patternUnits="userSpaceOnUse">
       <path d="M10,8 L10,28 A10,10 0 0,0 10,8 Z" fill="currentColor"/>
       <path d="M120,65 L120,85 A10,10 0 0,0 120,65 Z" fill="currentColor"/>
@@ -195,21 +248,28 @@ html, body { background: var(--cream); font-family: var(--font-body); color: var
 
 <!-- PAGE 1 — CAPA -->
 <div class="page p1">
-  <svg class="p1-deco" width="80mm" height="80mm" viewBox="0 0 200 200" style="color:var(--terra);"><rect width="200" height="200" fill="url(#estampa)"/></svg>
+  <div class="p1-bg-photo"><img src="mp2wcuan-Juliana_parto_Luca-114.jpg" alt=""></div>
+  <svg class="p1-deco" width="80mm" height="80mm" viewBox="0 0 200 200" style="color:var(--semente); opacity: 0.04;"><rect width="200" height="200" fill="url(#estampa)"/></svg>
   <div class="p1-top">
-    <svg class="p1-logo" viewBox="0 0 200 60" style="color:var(--terra);"><use href="#gpa"/></svg>
-    <h1 class="p1-brand">Gestar Parir Amar</h1>
-    <p class="p1-sub">Samanta Giannico · Doula</p>
-    <p class="p1-tagline">Doulagem para<br>gestantes brasileiras</p>
-    <p class="p1-loc">Barcelona · São Paulo · Online</p>
+    <div class="p1-top-group">
+      <img class="p1-logo logo-img" src="mp44ee30-Marca-Gestar-Parir-Amar_Prancheta-1-co_pia-6.png" alt="Gestar Parir Amar">
+      <h1 class="p1-name">Samanta Giannico</h1>
+      <p class="p1-cred">Doula · Educadora Perinatal e Parental · Pedagoga · Mãe</p>
+    </div>
+    <div class="p1-bottom-group">
+      <p class="p1-hook">Você não precisa parir sozinha.</p>
+      <div class="p1-sep"></div>
+      <p class="p1-tagline">Parto · Puerpério · Parentalidade · Amamentação</p>
+    </div>
   </div>
+  <div class="p1-strip-gap"></div>
   <div class="p1-photo-strip">
     <div class="strip-img"><img src="mp2wcu9x-barbarella_parto_isabelalellis-142.jpg" alt=""></div>
     <div class="strip-img"><img src="mp2wcua6-IMG_5609-Aprimorado-NR-_1_.jpg" alt=""></div>
     <div class="strip-img"><img src="mp2wcu85-311_NASC_MAVIE-11-_1_.jpg" alt=""></div>
     <div class="strip-img"><img src="mp2wcuao-Juliana_parto_Luca-139.jpg" alt=""></div>
   </div>
-  <div class="p1-footer"><span>Proposta · 2026</span></div>
+  <div class="p1-footer"><span>Barcelona · São Paulo · Online &nbsp;|&nbsp; @gestar_parir_amar</span></div>
 </div>
 
 <!-- PAGE 2 — QUEM SOU EU -->
@@ -219,64 +279,80 @@ html, body { background: var(--cream); font-family: var(--font-body); color: var
     <div class="p2-photo-accent"></div>
   </div>
   <div class="p2-text">
-    <span class="tag">Quem sou eu</span>
-    <h2>Muito prazer,<br>sou a Samanta.</h2>
-    <p class="p2-body">Doula formada pelo GAMA — Grupo de Apoio à Maternidade Ativa — e em Arte do Parto com Naoli Vinaver, parteira tradicional referência latino-americana em parto humanizado. Pedagoga pelo Instituto Singularidades, vice-diretora da ADOSP, palestrante no Siaparto. Mãe da Iris e da Flora.</p>
-    <p class="p2-body">Em 2012, depois de uma experiência de violência obstétrica, fundei o Gestar Parir Amar, iniciativa que desde então democratiza o acesso à informação sobre parto evidenciado. Criadora da plataforma e aplicativo Gestar, Nascer, Crescer e facilitadora dos workshops Do Gestar ao Parir.</p>
-    <p class="p2-body">Hoje vivo em Barcelona e atendo presencialmente brasileiras na cidade. Sigo atendendo online o Brasil e o resto do mundo. Tudo, sempre, em português.</p>
+    <h2>Quem sou eu</h2>
+    <p class="p2-body">Doula formada pelo <strong>GAMA</strong> — Grupo de Apoio à Maternidade Ativa — e em <strong>Arte do Parto</strong> com <strong>Naoli Vinaver</strong>, parteira tradicional referência latino-americana em parto humanizado. Pedagoga pelo <strong>Instituto Singularidades</strong>, vice-diretora da <strong>ADOSP</strong>, palestrante no <strong>Siaparto</strong>. Mãe da Iris e da Flora.</p>
+    <p class="p2-body">Em 2012, depois de uma experiência de <strong>violência obstétrica</strong>, fundei o <strong>Gestar Parir Amar</strong>, iniciativa que desde então democratiza o acesso à informação sobre <strong>parto evidenciado</strong>. Criadora da plataforma e aplicativo <strong>Gestar, Nascer, Crescer</strong> e facilitadora dos workshops <strong>Do Gestar ao Parir</strong>.</p>
+    <p class="p2-body">Hoje vivo em <strong>Barcelona</strong> e atendo presencialmente brasileiras na cidade. Sigo atendendo <strong>online</strong> o Brasil e o resto do mundo. Tudo, sempre, em <strong>português</strong>.</p>
     <p class="p2-quote">"Vivi uma violência obstétrica e vivi um parto humanizado. Sei das duas experiências nos poros da minha pele."</p>
   </div>
-  <svg class="p2-deco-spiral" width="60mm" height="60mm" viewBox="0 0 100 100" fill="none" stroke="var(--caule)" stroke-width="0.6">
-    <path d="M50 50 C50 42,58 38,62 42 C66 46,64 54,58 58 C52 62,44 60,40 54 C36 48,38 38,44 34 C50 30,60 32,64 38 C68 44,66 56,58 62 C50 68,38 66,32 58 C26 50,28 38,36 32 C44 26,56 28,64 36"/>
-  </svg>
 </div>
 
-<!-- PAGE 3 — PILARES -->
+<!-- PAGE 3 — PILARES (full-bleed editorial) -->
 <div class="page p3">
-  <div class="p3-header">
-    <span class="tag">Meu método</span>
-    <h2>Três pilares sustentam<br>tudo o que faço.</h2>
+  <div class="p3-bg"><img src="mp2wcu8u-1090P_B-_3_.jpg" alt=""></div>
+  <div class="p3-content">
+    <div class="p3-header">
+      <span class="tag">Meu método</span>
+      <h2>Três pilares sustentam<br>tudo o que faço.</h2>
+    </div>
+    <p class="p3-subtitle">Um olhar integrativo, sutil e singular ao processo da perinatalidade.</p>
+    <div class="p3-pillars">
+      <div class="p3-pillar">
+        <span class="p3-pillar-num">01</span>
+        <div class="p3-pillar-content">
+          <h3>Emoção</h3>
+          <div class="p3-pillar-line"></div>
+          <p>Escuta acolhedora, espaço seguro, sustentação afetiva ao longo de todo o ciclo gravídico-puerperal. Eu cuido de você enquanto você cuida do bebê.</p>
+        </div>
+      </div>
+      <div class="p3-pillar">
+        <span class="p3-pillar-num">02</span>
+        <div class="p3-pillar-content">
+          <h3>Corpo</h3>
+          <div class="p3-pillar-line"></div>
+          <p>Trabalho somático, mobilidade facilitadora, alívio não-farmacológico da dor, presença encarnada no parto. Respirações, posições, hidroterapia, rebozo, Spinning Babies.</p>
+        </div>
+      </div>
+      <div class="p3-pillar">
+        <span class="p3-pillar-num">03</span>
+        <div class="p3-pillar-content">
+          <h3>Informação</h3>
+          <div class="p3-pillar-line"></div>
+          <p>Educação perinatal baseada em evidências, plano de parto co-construído, autonomia para suas decisões. Conhecimento é poder durante a gestação, parto e puerpério.</p>
+        </div>
+      </div>
+    </div>
+    <div class="p3-footer"><img class="p3-footer-logo logo-img" src="mp31nkt8-Marca-Gestar-Parir-Amar_Prancheta-1-co_pia-2.png" alt="Gestar Parir Amar"></div>
   </div>
-  <p class="p3-subtitle">Um olhar integrativo, sutil e singular ao processo da perinatalidade.</p>
-  <div class="p3-photo-row">
-    <div class="pr-img"><img src="mp2wcu8a-1047P_B-_2_.jpg" alt="" style="object-position: center 60%;"></div>
-    <div class="pr-img"><img src="mp2wcu8u-1090P_B-_3_.jpg" alt="" style="object-position: center 40%;"></div>
-    <div class="pr-img"><img src="mp2wcu9a-1119P_B-_1_.jpg" alt="" style="object-position: center 50%;"></div>
-  </div>
-  <div class="p3-cards">
-    <div class="p3-card p3-card-1"><span class="num">01</span><h3>Emoção</h3><div class="divider"></div><p class="text">Escuta acolhedora, espaço seguro, sustentação afetiva ao longo de todo o ciclo gravídico-puerperal. Eu cuido de você enquanto você cuida do bebê.</p></div>
-    <div class="p3-card p3-card-2"><span class="num">02</span><h3>Corpo</h3><div class="divider"></div><p class="text">Trabalho somático, mobilidade facilitadora, alívio não-farmacológico da dor, presença encarnada no parto. Respirações, posições, hidroterapia, rebozo, Spinning Babies.</p></div>
-    <div class="p3-card p3-card-3"><span class="num">03</span><h3>Informação</h3><div class="divider"></div><p class="text">Educação perinatal baseada em evidências, plano de parto co-construído, autonomia para suas decisões. Conhecimento é poder durante a gestação, parto e puerpério.</p></div>
-  </div>
-  <div class="p3-footer"><svg class="p3-footer-logo" viewBox="0 0 200 60" style="color:var(--caule); opacity: 0.3;"><use href="#gpa"/></svg></div>
 </div>
 
 <!-- PAGE 4 — MODALIDADES -->
 <div class="page p4">
+  <svg class="p4-deco" width="80mm" height="80mm" viewBox="0 0 140 100" style="color:var(--caule);"><rect width="140" height="100" fill="url(#estampa)"/></svg>
   <div class="p4-photo-accent"><img src="mp2wcuan-Juliana_parto_Luca-114.jpg" alt=""></div>
-  <div class="p4-header"><span class="tag">Modalidades</span><h2>Três caminhos para<br>nos encontrarmos.</h2></div>
+  <div class="p4-header"><span class="tag">Modalidades</span><h2>Três caminhos para nos encontrarmos.</h2><div class="p4-header-line"></div></div>
   <div class="modalidade">
-    <div class="mod-icon"><svg width="20mm" height="20mm" viewBox="0 0 60 60" fill="none"><path d="M30 5 C15 15,10 30,15 45 C20 55,30 58,30 58 C30 58,40 55,45 45 C50 30,45 15,30 5Z" stroke="var(--caule)" stroke-width="1.2" fill="none"/><path d="M30 18 C26 24,24 32,26 40 C28 46,30 48,30 48" stroke="var(--caule)" stroke-width="0.7" fill="none"/></svg></div>
+    <span class="mod-num">01</span>
     <div><h3>Presencial em Barcelona</h3><p>Atendo brasileiras em Barcelona e área metropolitana. Pré-natal em consultórios parceiros ou no seu lar. Parto em domicílio, casa de partos ou hospital — público (Clínic, Sant Joan de Déu, Vall d'Hebron, Sant Pau, Hospital del Mar) ou privado (Dexeus, Teknon, HM Nou Delfos, Quirónsalud).</p></div>
   </div>
   <div class="modalidade">
-    <div class="mod-icon"><svg width="20mm" height="20mm" viewBox="0 0 60 60" fill="none"><path d="M30 30 C30 25,35 22,38 25 C41 28,40 34,36 36 C32 38,26 37,24 33 C22 29,23 23,28 20 C33 17,40 18,43 23 C46 28,45 36,40 40 C35 44,27 43,23 38" stroke="var(--caule)" stroke-width="1.2" fill="none"/></svg></div>
+    <span class="mod-num">02</span>
     <div><h3>Online · Brasil e mundo</h3><p>Para brasileiras em qualquer lugar. Pré-natais por videochamada, plano de parto co-construído, biblioteca virtual completa, plantão por WhatsApp e suporte às decisões durante o trabalho de parto.</p></div>
   </div>
   <div class="modalidade">
-    <div class="mod-icon"><svg width="20mm" height="20mm" viewBox="0 0 60 60" fill="none"><circle cx="30" cy="15" r="5" stroke="var(--caule)" stroke-width="1" fill="none"/><path d="M30 20 C30 20,22 28,22 38 C22 48,30 52,30 52 C30 52,38 48,38 38 C38 28,30 20,30 20Z" stroke="var(--caule)" stroke-width="1" fill="none"/></svg></div>
+    <span class="mod-num">03</span>
     <div><h3>São Paulo · viagens programadas</h3><p>Em viagens ao Brasil, mantenho agenda presencial em São Paulo. Combinamos com antecedência.</p></div>
   </div>
-  <div class="p4-footer"><span class="p4-footer-text">Atendimento sempre em português</span><svg class="p4-footer-logo" viewBox="0 0 200 60" style="color:var(--caule); opacity: 0.25;"><use href="#gpa"/></svg></div>
+  <div class="p4-footer"><img class="p4-footer-logo logo-img" src="mp31nkta-Marca-Gestar-Parir-Amar_Prancheta-1.png" alt="Gestar Parir Amar" style="opacity: 0.3;"></div>
 </div>
 
 <!-- PAGE 5 — PACOTES -->
 <div class="page p5">
   <div class="p5-header"><span class="tag">Investimento</span><h2>Quatro caminhos. Escolha o que<br>conversa com o seu momento.</h2></div>
   <div class="p5-cards">
-    <div class="pk pk-cream"><div class="pk-name">Acolher</div><div class="pk-type">Essencial</div><ul><li>3 encontros de pré-natal</li><li>Plano de parto co-construído</li><li>Acompanhamento ao parto</li><li>1 visita de pós-parto</li><li>Plantão WhatsApp 30 dias</li><li>Biblioteca virtual</li><li>Doula backup sem custo</li></ul><div class="pk-line"></div><span class="pk-price">R$ 4.900</span><span class="pk-alt">ou € 1.050</span></div>
-    <div class="pk pk-terra"><div class="pk-name">Cuidar</div><div class="pk-type">Completo</div><ul><li>5 encontros de pré-natal</li><li>Plano de parto co-construído</li><li>Acompanhamento ao parto</li><li>2 visitas de pós-parto</li><li>Suporte aleitamento e sono</li><li>Plantão WhatsApp 60 dias</li><li>Spinning Babies + rebozo</li><li>Biblioteca virtual completa</li><li>Doula backup sem custo</li></ul><div class="pk-line"></div><span class="pk-price">R$ 5.500</span><span class="pk-alt">ou € 1.250</span></div>
-    <div class="pk pk-cream"><div class="pk-name">Sustentar</div><div class="pk-type">Imersivo</div><ul><li>5 pré-natais + ritual</li><li>Plano de parto co-construído</li><li>Acompanhamento ao parto</li><li>3 pós-parto + massagem</li><li>Babywearing (sling)</li><li>Carimbo de placenta</li><li>Plantão WhatsApp 90 dias</li><li>Mobilidade + ed. somática</li><li>Biblioteca virtual completa</li><li>Doula backup sem custo</li></ul><div class="pk-line"></div><span class="pk-price">R$ 6.200</span><span class="pk-alt">ou € 1.450</span></div>
+    <div class="pk pk-cream"><div class="pk-name">Acolher</div><div class="pk-type">Essencial</div><ul><li>3 encontros de pré-natal</li><li>Plano de parto co-construído</li><li>Acompanhamento ao parto</li><li>1 consulta de pós-parto</li><li>Plantão WhatsApp 30 dias</li><li>Biblioteca virtual</li><li>Doula backup sem custo</li></ul><div class="pk-line"></div><span class="pk-price">R$ 4.900</span><span class="pk-alt">ou € 1.050</span></div>
+    <div class="pk pk-terra"><div class="pk-name">Cuidar</div><div class="pk-type">Completo</div><ul><li>5 encontros de pré-natal</li><li>Plano de parto co-construído</li><li>Acompanhamento ao parto</li><li>2 consultas de pós-parto</li><li>Suporte aleitamento e sono</li><li>Plantão WhatsApp 60 dias</li><li>Spinning Babies + rebozo</li><li>Biblioteca virtual completa</li><li>Doula backup sem custo</li></ul><div class="pk-line"></div><span class="pk-price">R$ 5.500</span><span class="pk-alt">ou € 1.250</span></div>
+    <div class="pk pk-fruto"><div class="pk-name">Sustentar</div><div class="pk-type">Imersivo</div><ul><li>5 pré-natais + ritual</li><li>Plano de parto co-construído</li><li>Acompanhamento ao parto</li><li>3 pós-parto + massagem</li><li>Babywearing (sling)</li><li>Carimbo de placenta</li><li>Plantão WhatsApp 90 dias</li><li>Mobilidade + ed. somática</li><li>Biblioteca virtual completa</li><li>Doula backup sem custo</li></ul><div class="pk-line"></div><span class="pk-price">R$ 6.200</span><span class="pk-alt">ou € 1.450</span></div>
     <div class="pk pk-cream"><div class="pk-name">Online</div><div class="pk-type">À distância</div><ul><li>5 pré-natais por vídeo</li><li>Plano de parto co-construído</li><li>Plantão no trabalho de parto</li><li>2 pós-parto online</li><li>Biblioteca virtual completa</li><li>Suporte equipe local</li></ul><div class="pk-line"></div><span class="pk-price">R$ 3.200</span><span class="pk-alt">ou € 750</span></div>
   </div>
   <p class="p5-footer">Parcelamento personalizado · PIX, transferência bancária ou cartão · Conversamos sobre a sua necessidade.</p>
@@ -290,102 +366,331 @@ html, body { background: var(--cream); font-family: var(--font-body); color: var
     <div class="step"><span class="step-num">01</span><h3>Conversa inicial gratuita</h3><p>Por videochamada, 30 minutos. Você me conta sobre sua gestação, seu momento e suas dúvidas. Sem compromisso — é um momento para nos conhecermos.</p></div>
     <div class="step"><span class="step-num">02</span><h3>Escolha do pacote</h3><p>Definimos juntas o caminho que faz mais sentido — Acolher, Cuidar, Sustentar ou Online — ajustando à sua singularidade.</p></div>
     <div class="step"><span class="step-num">03</span><h3>Contrato e primeiro encontro</h3><p>Assinatura do contrato, primeiro pagamento e agendamento do nosso primeiro encontro de pré-natal.</p></div>
-    <div class="step"><span class="step-num">04</span><h3>Acompanhamento</h3><p>Encontros, plantão WhatsApp, plano de parto, parto e visitas de puerpério — seguindo o ritmo da sua gestação.</p></div>
-    <div class="step"><span class="step-num">05</span><h3>Reencontro pós-parto</h3><p>Visitas de puerpério, suporte em aleitamento e adaptação familiar. Fechamento do ciclo.</p></div>
+    <div class="step"><span class="step-num">04</span><h3>Acompanhamento</h3><p>Encontros, plantão WhatsApp, plano de parto, parto e consultas de puerpério — seguindo o ritmo da sua gestação.</p></div>
+    <div class="step"><span class="step-num">05</span><h3>Reencontro pós-parto</h3><p>Consultas de puerpério, suporte em aleitamento e adaptação familiar. Fechamento do ciclo.</p></div>
   </div>
-  <div class="p6-photo"><img src="mp2wcu9y-DSC_0033.jpg" alt=""></div>
+  <div class="p6-photo"><img src="mp2wcuac-IMG_5865-_1_.jpg" alt="" style="object-position: center 20%;"></div>
 </div>
 
-<!-- PAGE 7 — GALERIA -->
+<!-- PAGE 7 — GALERIA (film strip) -->
 <div class="page p7">
   <div class="p7-header"><span class="tag">Registros</span><h2>Cada nascimento, uma história.</h2></div>
-  <div class="p7-grid">
-    <div class="gi gi-2c gi-2r"><img src="mp2wcu9t-A-chegada-de-Joao-Lazaro-_58_-_2_.jpg" alt=""></div>
-    <div class="gi"><img src="mp2wcu85-311_NASC_MAVIE-11-_1_.jpg" alt=""></div>
-    <div class="gi"><img src="mp2wcua2-IMG_5538-Aprimorado-NR.jpg" alt=""></div>
-    <div class="gi"><img src="mp2wcu7a-33_parto-maria-flor_.jpg" alt=""></div>
-    <div class="gi-brand gi"><svg viewBox="0 0 200 60" style="color:var(--semente);"><use href="#gpa"/></svg></div>
-    <div class="gi gi-2c"><img src="mp2wcuac-IMG_5865-_1_.jpg" alt=""></div>
-    <div class="gi"><img src="mp2wcu8a-1047P_B-_2_.jpg" alt=""></div>
-    <div class="gi"><img src="mp2wcu9a-1119P_B-_1_.jpg" alt=""></div>
-    <div class="gi"><img src="mp2wcuap-SIAPARTOluminascer2-5.jpg" alt=""></div>
-    <div class="gi"><img src="mp2wcua0-DSC_0177.jpg" alt=""></div>
-    <div class="gi"><img src="mp2wcuan-Juliana_parto_Luca-114.jpg" alt=""></div>
-    <div class="gi gi-2c"><img src="mp2wcu9x-barbarella_parto_isabelalellis-142.jpg" alt=""></div>
-    <div class="gi"><img src="mp2wcuar-WhatsApp-Image-2023-02-14-at-15.07.06-_1_.jpeg" alt=""></div>
+  <div class="p7-strip">
+    <div class="gs gs-wide"><img src="mp2wcu9t-A-chegada-de-Joao-Lazaro-_58_-_2_.jpg" alt=""></div>
+    <div class="gs"><img src="mp2wcu85-311_NASC_MAVIE-11-_1_.jpg" alt=""></div>
+    <div class="gs"><img src="mp2wcua2-IMG_5538-Aprimorado-NR.jpg" alt=""></div>
+    <div class="gs"><img src="mp2wcu7a-33_parto-maria-flor_.jpg" alt=""></div>
+    <div class="gs gs-wide"><img src="mp2wcu9x-barbarella_parto_isabelalellis-142.jpg" alt=""></div>
   </div>
+  <div class="p7-strip p7-strip-2">
+    <div class="gs"><img src="mp2wcua0-DSC_0177.jpg" alt=""></div>
+    <div class="gs gs-wide"><img src="mp2wcuac-IMG_5865-_1_.jpg" alt=""></div>
+    <div class="gs"><img src="mp2wcu8a-1047P_B-_2_.jpg" alt=""></div>
+    <div class="gs gs-wide"><img src="mp2wcuan-Juliana_parto_Luca-114.jpg" alt=""></div>
+    <div class="gs"><img src="mp2wcuap-SIAPARTOluminascer2-5.jpg" alt=""></div>
+  </div>
+  <img class="p7-logo logo-img" src="mp31nkt8-Marca-Gestar-Parir-Amar_Prancheta-1-co_pia-2.png" alt="Gestar Parir Amar">
   <p class="p7-footer">Imagens cedidas pelas famílias · Acervo pessoal e fotógrafas parceiras</p>
 </div>
 
 <!-- PAGE 8 — DEPOIMENTOS -->
 <div class="page p8">
+  <div class="p8-bg-photo"><img src="mp2wcua6-IMG_5609-Aprimorado-NR-_1_.jpg" alt=""></div>
   <svg class="p8-deco" width="100mm" height="100mm" viewBox="0 0 140 100" style="color:var(--fruto);"><rect width="140" height="100" fill="url(#estampa)"/></svg>
   <div class="p8-header"><span class="tag">Quem já caminhou comigo</span><h2>Palavras que carrego.</h2></div>
   <div class="dep-grid">
-    <div class="dep"><blockquote>"A Samantha foi fundamental para a minha entrega ao parto. Ela me ajudou a romper todas as crenças e barreiras que me distanciavam de um parto natural. Durante o parto, sentia que sua presença, silêncio e palavras sempre chegavam no momento certo."</blockquote><cite>— Isabella Lellis</cite></div>
-    <div class="dep"><blockquote>"A Samantha tem o dom da escuta, uma sensibilidade e intuição de saber dizer exatamente o que você precisa escutar. Como se chegasse com as peças de um quebra-cabeça que estavam faltando. Uma lanterna em uma caverna escura."</blockquote><cite>— Izabel Nobre</cite></div>
-    <div class="dep dep-wide"><blockquote>"Sem palavras, você foi impecável! Um apoio amoroso extremamente essencial e com várias ferramentas pra manejar a situação. Me senti 100% cuidada, zelada, vista, e por uma mulher forte, que sustenta o trabalho. Gratidão pelo seu serviço, é de tirar o chapéu!"</blockquote><cite>— Mariana Louver</cite></div>
-    <div class="dep"><blockquote>"A doulagem fez muita diferença pra gente, e nós pudemos experimentar tudo com mais segurança e autonomia. Fomos recompensados com um parto lindo. A Jef sempre consciente, sem sedações e sempre tratada com respeito."</blockquote><cite>— Jéssica · Doulagem social</cite></div>
-    <div class="dep"><blockquote>"Os nossos encontros me fizeram ter um parto seguro — e digo seguro de estar segura, tranquila e confiante. Ter você como doula e rede de apoio foi essencial para que eu acreditasse em um parto de confiança e tranquilidade."</blockquote><cite>— Mãe da Helena</cite></div>
+    <div class="dep"><blockquote>"A Samantha foi <strong>fundamental para a minha entrega ao parto</strong>. Ela me ajudou a romper todas as crenças e barreiras que me distanciavam de um parto natural. Durante o parto, sentia que sua <strong>presença, silêncio e palavras</strong> sempre chegavam no momento certo."</blockquote><cite>— Isabella Lellis</cite></div>
+    <div class="dep"><blockquote>"A Samantha tem o <strong>dom da escuta</strong>, uma sensibilidade e intuição de saber dizer exatamente o que você precisa escutar. Como se chegasse com as peças de um quebra-cabeça que estavam faltando. <strong>Uma lanterna em uma caverna escura.</strong>"</blockquote><cite>— Izabel Nobre</cite></div>
+    <div class="dep dep-wide"><blockquote>"Sem palavras, você foi <strong>impecável</strong>! Um apoio amoroso extremamente essencial e com várias ferramentas pra manejar a situação. Me senti <strong>100% cuidada, zelada, vista</strong>, e por uma mulher forte, que sustenta o trabalho. Gratidão pelo seu serviço, é de tirar o chapéu!"</blockquote><cite>— Mariana Louver</cite></div>
+    <div class="dep"><blockquote>"A doulagem fez <strong>muita diferença</strong> pra gente, e nós pudemos experimentar tudo com mais <strong>segurança e autonomia</strong>. Fomos recompensados com um parto lindo. A Jef sempre consciente, sem sedações e sempre tratada com respeito."</blockquote><cite>— Jéssica · Doulagem social</cite></div>
+    <div class="dep"><blockquote>"Os nossos encontros me fizeram ter um <strong>parto seguro</strong> — e digo seguro de estar segura, tranquila e confiante. Ter você como <strong>doula e rede de apoio</strong> foi essencial para que eu acreditasse em um parto de <strong>confiança e tranquilidade</strong>."</blockquote><cite>— Mãe da Helena</cite></div>
   </div>
   <p class="p8-note">Depoimentos reais de gestantes acompanhadas.</p>
 </div>
 
 <!-- PAGE 9 — CONVITE FINAL -->
 <div class="page p9">
+  <div class="p9-bg-photo"><img src="mp2wcu9x-barbarella_parto_isabelalellis-142.jpg" alt=""></div>
   <div class="p9-deco"><svg width="180mm" height="180mm" viewBox="0 0 140 100" style="color:var(--semente);"><rect width="140" height="100" fill="url(#estampa)"/></svg></div>
   <div class="p9-content">
-    <span class="p9-pre">Vamos começar</span>
-    <svg class="p9-logo" viewBox="0 0 200 60" style="color:var(--semente);"><use href="#gpa"/></svg>
-    <h2 class="p9-title">Obrigada por considerar caminhar comigo nesse ciclo.</h2>
-    <p class="p9-body">Quando quiser conversar, estou aqui. O primeiro encontro é por minha conta — sem compromisso, sem pressão, sem fórmula. Só uma escuta para descobrirmos juntas se faz sentido.</p>
+    <img class="p9-logo logo-img" src="mp31nkt8-Marca-Gestar-Parir-Amar_Prancheta-1-co_pia-2.png" alt="Gestar Parir Amar">
+    <h2 class="p9-title">Estou aqui quando você quiser conversar.</h2>
+    <p class="p9-note">Sem compromisso, sem fórmula. Uma escuta para descobrirmos juntas se faz sentido.</p>
     <div class="contact-row">
-      <div class="c-item"><div class="c-label">WhatsApp</div><div class="c-val">+55 11 5198-8223</div></div>
-      <div class="c-item"><div class="c-label">Instagram</div><div class="c-val">@gestar_parir_amar</div></div>
+      <div class="c-item"><div class="c-label">WhatsApp</div><div class="c-val"><a href="https://wa.me/551151988223" style="color:inherit;text-decoration:none;">+55 11 5198-8223</a></div></div>
+      <div class="c-item"><div class="c-label">Instagram</div><div class="c-val"><a href="https://instagram.com/gestar_parir_amar" style="color:inherit;text-decoration:none;">@gestar_parir_amar</a></div></div>
       <div class="c-item"><div class="c-label">Link na bio</div><div class="c-val">linktr.ee/GestarParirAmar</div></div>
       <div class="c-item"><div class="c-label">App / Curso</div><div class="c-val">Gestar, Nascer, Crescer</div></div>
     </div>
-    <p class="p9-closing">Por gestar. Por parir. Por amar.</p>
-    <span class="p9-brand">Gestar Parir Amar</span>
+    <span class="p9-brand">Samanta Giannico · Gestar Parir Amar</span>
   </div>
 </div>
 
+<!-- MODE TOGGLE -->
+<div class="mode-toggle" id="modeToggle">
+  <button id="modeEdit" class="active" title="Editar texto">Editar</button>
+  <button id="modeDrag" title="Mover elementos">Mover</button>
+  <button id="modePhoto" title="Trocar fotos">Fotos</button>
+</div>
+
+<!-- EDITOR TOOLBAR -->
+<div class="ed-toolbar" id="edToolbar">
+  <button id="edBold" title="Negrito (Ctrl+B)"><b>B</b></button>
+  <button id="edItalic" title="Itálico (Ctrl+I)"><i>I</i></button>
+  <div class="ed-sep"></div>
+  <button id="edSizeDn" title="Diminuir fonte">A−</button>
+  <span class="ed-size-label" id="edSizeLabel">12px</span>
+  <button id="edSizeUp" title="Aumentar fonte">A+</button>
+  <div class="ed-sep"></div>
+  <button id="edAlignL" title="Esquerda">&#9776;</button>
+  <button id="edAlignC" title="Centro">&#9776;</button>
+  <button id="edAlignR" title="Direita">&#9776;</button>
+  <div class="ed-sep"></div>
+  <span class="ed-color-dot" data-color="#5A372B" style="background:#5A372B;" title="Terra"></span>
+  <span class="ed-color-dot" data-color="#935A3D" style="background:#935A3D;" title="Caule"></span>
+  <span class="ed-color-dot" data-color="#A73E2B" style="background:#A73E2B;" title="Fruto"></span>
+  <span class="ed-color-dot" data-color="#97262B" style="background:#97262B;" title="Flor"></span>
+  <span class="ed-color-dot" data-color="#E0DFB1" style="background:#E0DFB1;" title="Semente"></span>
+  <span class="ed-color-dot" data-color="#F5F4D7" style="background:#F5F4D7;border:1px solid #ccc;" title="Seiva"></span>
+</div>
+<div class="ed-hint" id="edHint">Editar = clique no texto · Mover = arraste elementos · Fotos = clique para trocar</div>
+
 <script>
 (function() {
-  document.querySelectorAll('.strip-img, .p2-photo, .pr-img, .p4-photo-accent, .p5-photo-strip, .p6-photo, .gi:not(.gi-brand)').forEach(function(el) {
-    el.classList.add('drop-zone');
-    el.addEventListener('dragover', function(e) { e.preventDefault(); el.classList.add('drag-over'); });
-    el.addEventListener('dragleave', function() { el.classList.remove('drag-over'); });
-    el.addEventListener('drop', function(e) {
-      e.preventDefault(); el.classList.remove('drag-over');
-      var file = e.dataTransfer.files[0];
-      if (file && file.type.startsWith('image/')) {
-        var reader = new FileReader();
-        reader.onload = function(evt) {
-          var img = el.querySelector('img');
-          if (img) { img.src = evt.target.result; }
-          else { img = document.createElement('img'); img.src = evt.target.result; img.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block'; el.appendChild(img); }
-        };
-        reader.readAsDataURL(file);
-      }
+  var mode = 'edit'; // 'edit', 'drag', 'photo'
+  var toolbar = document.getElementById('edToolbar');
+  var sizeLabel = document.getElementById('edSizeLabel');
+  var hint = document.getElementById('edHint');
+  var activeEl = null;
+
+  var EDITABLE = 'h1, h2, h3, p:not(.p1-footer *), span.tag, span.p9-pre, span.p9-brand, blockquote, cite, li, .pk-name, .pk-type, .pk-price, .pk-alt, .p1-brand, .p1-tagline, .p1-loc, .p2-body, .p2-quote, .p3-subtitle, .p3-card .text, .p3-card .num, .p4-footer-text, .p5-footer, .step-num, .step h3, .step p, .modalidade h3, .modalidade p, .p7-footer, .p8-note, .p9-title, .p9-body, .p9-closing, .c-label, .c-val, .dep blockquote, .dep cite, .p1-footer span';
+
+  var DRAGGABLE = 'h1, h2, h3, p, span.tag, span.p9-pre, span.p9-brand, blockquote, .dep, .p3-card, .pk, .modalidade, .step, .p1-logo, .p1-photo-strip, .p2-photo, .p3-photo-row, .p4-photo-accent, .p6-photo, .gi, .gi-brand, .p1-footer, .p3-footer, .p4-footer, .contact-row, .logo-img, .mod-icon';
+
+  var PHOTO_ZONES = '.strip-img, .p2-photo, .pr-img, .p4-photo-accent, .p6-photo, .gi:not(.gi-brand)';
+
+  // === MODE SWITCHING ===
+  document.getElementById('modeEdit').addEventListener('click', function() { setMode('edit'); });
+  document.getElementById('modeDrag').addEventListener('click', function() { setMode('drag'); });
+  document.getElementById('modePhoto').addEventListener('click', function() { setMode('photo'); });
+
+  function setMode(m) {
+    mode = m;
+    deactivateText();
+    document.querySelectorAll('.mode-toggle button').forEach(function(b) { b.classList.remove('active'); });
+    document.getElementById('mode' + m.charAt(0).toUpperCase() + m.slice(1)).classList.add('active');
+
+    // Reset all elements
+    document.querySelectorAll('.draggable').forEach(function(el) { el.classList.remove('draggable'); });
+    document.querySelectorAll('.drop-zone').forEach(function(el) { el.classList.remove('drop-zone'); });
+    document.querySelectorAll('.drag-selected').forEach(function(el) { el.classList.remove('drag-selected'); });
+
+    if (m === 'drag') {
+      document.querySelectorAll(DRAGGABLE).forEach(function(el) {
+        if (el.closest('svg') || el.closest('.ed-toolbar') || el.closest('.mode-toggle')) return;
+        el.classList.add('draggable');
+      });
+    }
+    if (m === 'photo') {
+      document.querySelectorAll(PHOTO_ZONES).forEach(function(el) {
+        el.classList.add('drop-zone');
+      });
+    }
+  }
+
+  // === TEXT EDITING (mode: edit) ===
+  document.addEventListener('click', function(e) {
+    if (mode !== 'edit') return;
+    var el = e.target.closest(EDITABLE);
+    if (el && !el.closest('svg') && !el.closest('.ed-toolbar') && !el.closest('.mode-toggle')) {
+      e.stopPropagation();
+      if (activeEl === el) return;
+      deactivateText();
+      activateText(el);
+      return;
+    }
+    if (activeEl && !toolbar.contains(e.target)) {
+      deactivateText();
+    }
+  }, true);
+
+  function activateText(el) {
+    activeEl = el;
+    el.contentEditable = 'true';
+    el.classList.add('ed-active');
+    el.focus();
+    toolbar.classList.add('visible');
+    updateToolbar();
+  }
+
+  function deactivateText() {
+    if (activeEl) {
+      activeEl.contentEditable = 'false';
+      activeEl.classList.remove('ed-active');
+      activeEl = null;
+    }
+    toolbar.classList.remove('visible');
+  }
+
+  function updateToolbar() {
+    if (!activeEl) return;
+    var cs = window.getComputedStyle(activeEl);
+    sizeLabel.textContent = Math.round(parseFloat(cs.fontSize)) + 'px';
+    document.getElementById('edBold').classList.toggle('active', parseInt(cs.fontWeight) >= 600);
+    document.getElementById('edItalic').classList.toggle('active', cs.fontStyle === 'italic');
+    var ta = cs.textAlign;
+    document.getElementById('edAlignL').classList.toggle('active', ta === 'left' || ta === 'start');
+    document.getElementById('edAlignC').classList.toggle('active', ta === 'center');
+    document.getElementById('edAlignR').classList.toggle('active', ta === 'right');
+    document.querySelectorAll('.ed-color-dot').forEach(function(dot) {
+      var tmp = document.createElement('span'); tmp.style.color = dot.dataset.color;
+      document.body.appendChild(tmp); var resolved = window.getComputedStyle(tmp).color; document.body.removeChild(tmp);
+      dot.classList.toggle('active', resolved === cs.color);
     });
-    el.addEventListener('click', function() {
-      var input = document.createElement('input'); input.type = 'file'; input.accept = 'image/*';
-      input.onchange = function() {
-        var file = input.files[0];
-        if (file) {
-          var reader = new FileReader();
-          reader.onload = function(evt) {
-            var img = el.querySelector('img');
-            if (img) { img.src = evt.target.result; }
-            else { img = document.createElement('img'); img.src = evt.target.result; img.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block'; el.appendChild(img); }
-          };
-          reader.readAsDataURL(file);
-        }
-      };
-      input.click();
-    });
+  }
+
+  document.getElementById('edBold').addEventListener('click', function(e) { e.stopPropagation(); if (!activeEl) return; activeEl.style.fontWeight = parseInt(window.getComputedStyle(activeEl).fontWeight) >= 600 ? '400' : '700'; updateToolbar(); });
+  document.getElementById('edItalic').addEventListener('click', function(e) { e.stopPropagation(); if (!activeEl) return; activeEl.style.fontStyle = window.getComputedStyle(activeEl).fontStyle === 'italic' ? 'normal' : 'italic'; updateToolbar(); });
+  function changeSize(delta) { if (!activeEl) return; var current = parseFloat(window.getComputedStyle(activeEl).fontSize); activeEl.style.fontSize = Math.max(6, Math.min(80, current + delta)) + 'px'; updateToolbar(); }
+  document.getElementById('edSizeUp').addEventListener('click', function(e) { e.stopPropagation(); changeSize(1); });
+  document.getElementById('edSizeDn').addEventListener('click', function(e) { e.stopPropagation(); changeSize(-1); });
+  document.getElementById('edAlignL').addEventListener('click', function(e) { e.stopPropagation(); if (activeEl) { activeEl.style.textAlign = 'left'; updateToolbar(); } });
+  document.getElementById('edAlignC').addEventListener('click', function(e) { e.stopPropagation(); if (activeEl) { activeEl.style.textAlign = 'center'; updateToolbar(); } });
+  document.getElementById('edAlignR').addEventListener('click', function(e) { e.stopPropagation(); if (activeEl) { activeEl.style.textAlign = 'right'; updateToolbar(); } });
+  document.querySelectorAll('.ed-color-dot').forEach(function(dot) {
+    dot.addEventListener('click', function(e) { e.stopPropagation(); if (!activeEl) return; activeEl.style.color = dot.dataset.color; updateToolbar(); });
   });
+
+  document.addEventListener('keydown', function(e) {
+    if (mode === 'edit' && activeEl) {
+      if (e.ctrlKey || e.metaKey) {
+        if (e.key === 'b' || e.key === 'B') { e.preventDefault(); document.getElementById('edBold').click(); }
+        if (e.key === 'i' || e.key === 'I') { e.preventDefault(); document.getElementById('edItalic').click(); }
+      }
+      if (e.key === 'Escape') { deactivateText(); }
+    }
+    if (mode === 'drag' && dragSelected && (e.key === 'Delete' || e.key === 'Backspace')) {
+      // Reset position
+      dragSelected.style.transform = '';
+      dragSelected.style.position = '';
+      dragSelected.style.left = '';
+      dragSelected.style.top = '';
+    }
+  });
+
+  document.addEventListener('input', function() { if (activeEl) updateToolbar(); });
+
+  // === DRAG MODE ===
+  var dragSelected = null;
+  var isDragging = false;
+  var dragStartX, dragStartY, elStartX, elStartY;
+
+  document.addEventListener('mousedown', function(e) {
+    if (mode !== 'drag') return;
+    var el = e.target.closest('.draggable');
+    if (!el || el.closest('.mode-toggle') || el.closest('.ed-toolbar')) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    // Deselect previous
+    if (dragSelected) dragSelected.classList.remove('drag-selected');
+    dragSelected = el;
+    el.classList.add('drag-selected');
+
+    // Start drag
+    isDragging = true;
+    el.classList.add('dragging');
+    dragStartX = e.clientX;
+    dragStartY = e.clientY;
+
+    // Get current transform offset
+    var transform = el.style.transform;
+    var match = transform.match(/translate\(([-\d.]+)px,\s*([-\d.]+)px\)/);
+    elStartX = match ? parseFloat(match[1]) : 0;
+    elStartY = match ? parseFloat(match[2]) : 0;
+
+    // Ensure element is positioned for transform
+    if (!el.style.position || el.style.position === 'static') {
+      el.style.position = 'relative';
+    }
+  });
+
+  document.addEventListener('mousemove', function(e) {
+    if (!isDragging || !dragSelected) return;
+    var dx = e.clientX - dragStartX;
+    var dy = e.clientY - dragStartY;
+    dragSelected.style.transform = 'translate(' + (elStartX + dx) + 'px, ' + (elStartY + dy) + 'px)';
+  });
+
+  document.addEventListener('mouseup', function() {
+    if (isDragging && dragSelected) {
+      dragSelected.classList.remove('dragging');
+      isDragging = false;
+    }
+  });
+
+  // Click in drag mode to select without dragging
+  document.addEventListener('click', function(e) {
+    if (mode !== 'drag') return;
+    if (e.target.closest('.mode-toggle') || e.target.closest('.ed-toolbar')) return;
+    var el = e.target.closest('.draggable');
+    if (el) {
+      if (dragSelected) dragSelected.classList.remove('drag-selected');
+      dragSelected = el;
+      el.classList.add('drag-selected');
+    } else {
+      if (dragSelected) dragSelected.classList.remove('drag-selected');
+      dragSelected = null;
+    }
+  });
+
+  // === PHOTO MODE ===
+  function handlePhotoFile(el, file) {
+    if (file && file.type.startsWith('image/')) {
+      var reader = new FileReader();
+      reader.onload = function(evt) {
+        var img = el.querySelector('img');
+        if (img) { img.src = evt.target.result; }
+        else { img = document.createElement('img'); img.src = evt.target.result; img.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block'; el.appendChild(img); }
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
+  document.addEventListener('dragover', function(e) {
+    if (mode !== 'photo') return;
+    var zone = e.target.closest('.drop-zone');
+    if (zone) { e.preventDefault(); zone.classList.add('drag-over'); }
+  });
+  document.addEventListener('dragleave', function(e) {
+    if (mode !== 'photo') return;
+    var zone = e.target.closest('.drop-zone');
+    if (zone) zone.classList.remove('drag-over');
+  });
+  document.addEventListener('drop', function(e) {
+    if (mode !== 'photo') return;
+    var zone = e.target.closest('.drop-zone');
+    if (zone) {
+      e.preventDefault(); e.stopPropagation();
+      zone.classList.remove('drag-over');
+      handlePhotoFile(zone, e.dataTransfer.files[0]);
+    }
+  });
+  document.addEventListener('click', function(e) {
+    if (mode !== 'photo') return;
+    var zone = e.target.closest('.drop-zone');
+    if (zone) {
+      e.stopPropagation();
+      var input = document.createElement('input'); input.type = 'file'; input.accept = 'image/*';
+      input.onchange = function() { handlePhotoFile(zone, input.files[0]); };
+      input.click();
+    }
+  }, true);
+
+  // Init in edit mode
+  setMode('edit');
+  setTimeout(function() { hint.classList.add('hidden'); }, 6000);
 })();
 </script>
 </body>
